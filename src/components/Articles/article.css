@@ -1,0 +1,96 @@
+
+.Section-flex{
+  display: inline-flex;
+  margin-bottom: 0px;
+}
+
+.text-flex{
+max-width: 70%;
+margin-left:100px;
+margin-right: 50px;
+}
+
+
+.author{
+color:rgb(100,100,100)
+}
+
+.cards{
+  display: inline-block;
+  max-width: 400px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.article{
+margin: 20px;
+}
+
+
+
+.body{
+  width: 100%;
+
+}
+
+.body  p{
+line-height:35px;
+font-size: 20px;
+color:black;
+}
+
+
+.initial-image{
+height: 60%;
+width: 60%;
+border: 0.2px solid blue;
+}
+
+.image-card{
+margin: 10px;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .image-card:hover{
+    min-width:500px;
+  }
+}
+
+.subtitle{
+  max-width: 70%;
+}
+
+
+
+
+@media only screen and (max-width:700px){
+
+  .body{
+    width:100%;
+    margin-right: 4%;
+  }
+
+  .initial-image{
+    width:90%;
+    margin-bottom: 20px;
+}
+
+  .image-card{
+      width:90%;
+      margin-right: 0px;
+  }
+  .Section-flex{
+    display: block;
+    margin-bottom: 0px;
+  }
+  .text-flex{
+    max-width:100%;
+    margin: 2%;
+  }
+  .subtitle{
+  max-width: 90%;
+  }
+
+
+}

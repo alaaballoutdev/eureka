@@ -1,0 +1,73 @@
+.introduction{
+margin-top:20px;
+padding: 5px;
+width:80%;
+margin-right: 10%;
+}
+
+.m-image{
+width:35%;
+height: 35%;
+margin-bottom: 50px;
+margin-top: 20px;
+margin-right: 70px;
+border-radius: 10px;
+
+}
+
+.intro-body{
+font-family: arial;
+font-size: 18px;
+text-align: right;
+line-height: 1.5;
+width:55%;
+margin-right: 20px;
+}
+p{
+font-stretch: extra-expanded;
+}
+
+.intro-flex{
+  display: inline-flex;
+  flex-direction: row-reverse;
+}
+
+.dialog{
+color:rgb(50,50,50);
+margin-right:20%;
+width:60%;
+}
+.dialog p{
+text-align: center;
+font-size:17px;
+line-height: 30px;
+margin-top: 0px;
+}
+.interview{
+  margin: 20px;
+}
+
+@media only screen and (max-width:600px){
+  .intro-body{
+  font-family: arial;
+  font-size: 20px;
+  text-align: right;
+  line-height: 1.5;
+  width:100%;
+  margin-right: 0px;
+}
+.intro-flex{
+  display:block;
+
+}
+.m-image{
+  width: 90%;
+  margin-right: 5%;
+}
+.dialog{
+  width:95%;
+  margin-right: 2%;
+}
+
+
+}

@@ -1,0 +1,137 @@
+{
+"archive":[
+  {
+  "id":1,
+  "title":"العدد الاول",
+"name":"m-nb1.pdf",
+"date":"صدر في 2006",
+"thumbnail":"https://eurekamagazine.files.wordpress.com/2013/03/1.jpg?w=600&h=855"
+
+
+
+},
+  {
+  "id":2,
+  "title":"العددالثاني",
+"name":"m-nb2.pdf",
+"date":"صدر في 2007",
+"thumbnail":"https://eurekamagazine.files.wordpress.com/2013/03/2.jpg?w=600&h=855"
+
+
+
+},
+
+
+    {
+    "id":3,
+    "title":"العددالثالث",
+  "name":"m-nb3.pdf",
+  "date":"صدر في 2008",
+  "thumbnail":"https://eurekamagazine.files.wordpress.com/2013/03/3.jpg?w=600&h=834"
+
+
+
+},
+
+  {
+    "id":4,
+    "title":"العدد الرابع",
+  "name":"m-nb4.pdf",
+  "date":"صدر في 2009-3",
+  "thumbnail":"https://eurekamagazine.files.wordpress.com/2013/03/4.jpg?w=600&h=855"
+
+
+
+},
+
+
+
+
+
+  {
+    "id":5,
+    "title":"العددالخامس",
+  "name":"m-nb5.pdf",
+  "date":"صدر في 2010-3",
+  "thumbnail":"https://eurekamagazine.files.wordpress.com/2013/03/5.jpg?w=600&h=837"
+
+
+
+},
+
+{
+  "id":6,
+  "title":"العدد السادس",
+"name":"m-nb6.pdf",
+"date":"صدر في2011 -3",
+"thumbnail":"https://eurekamagazine.files.wordpress.com/2013/03/6.jpg?w=600&h=849"
+
+
+
+},
+{
+  "id":7,
+  "title":"العدد السابع",
+"name":"m-nb7.pdf",
+"date":"صدر في 2012-3",
+"thumbnail":"https://eurekamagazine.files.wordpress.com/2013/03/71.jpg?w=468&h=666"
+
+
+
+},
+
+
+
+
+{
+  "id":8,
+  "title":"العدد الثامن",
+"name":"m-nb8.pdf",
+"date":"صدر في 3-2013",
+"thumbnail":"https://eurekamagazine.files.wordpress.com/2013/06/1001829_561711227200478_465710614_n.png?w=480&h=682"
+
+
+
+},
+{
+  "id":9,
+  "title":"العدد التاسع",
+"name":"m-nb9.pdf",
+"date":"صدر في  3-2014",
+"thumbnail":"https://eurekamagazine.files.wordpress.com/2014/05/cover-no9.jpg?w=600"
+
+
+
+}
+,
+{
+  "id":12,
+  "title":"العدد الثاني عشر",
+"name":"m-nb12.pdf",
+"date":"صدر في 2018",
+"thumbnail":"../images/m12.jpg"
+
+
+
+},
+{
+  "id":13,
+  "title":"العددالثالث عشر",
+"name":"m-nb13.pdf",
+"date":"صدر في 2019",
+"thumbnail":"../images/m13.png"
+
+
+
+}
+
+
+
+]
+
+
+
+
+
+
+}
