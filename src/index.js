@@ -31,14 +31,14 @@ ReactDOM.render(
 <Routes>
   <Route exact path="/" element={<Home/>} />
   <Route exact path="/News" element={<News />} />
-  <Route path={`/News/:id`} element={<NewsPaper/>}/>
+  <Route path={`News/:id`} element={<NewsPaper/>}/>
   <Route exact path="/Articles" element={<ArticlesCards />} />
-  <Route path={`/Articles/:id`} element={<Article/>}/>
-  <Route exact path={`/Articles/Civil`} element={<Civil/>}/>
-  <Route path={`/Articles/Mechanical`} element={<Mechanical/>}/>
-  <Route path={`/Articles/Petro`} element={<Petro/>}/>
-  <Route path={`/Articles/Electrecitiy`} element={<Electrecitiy/>}/>
-  <Route path={`/Articles/General`} element={<General/>}/>
+  <Route path={`Articles/:id`} element={<Article/>}/>
+  <Route exact path={`Articles/Civil`} element={<Civil/>}/>
+  <Route path={`Articles/Mechanical`} element={<Mechanical/>}/>
+  <Route path={`Articles/Petro`} element={<Petro/>}/>
+  <Route path={`Articles/Electrecitiy`} element={<Electrecitiy/>}/>
+  <Route path={`Articles/General`} element={<General/>}/>
   <Route path={`/Events`} element={<Events/>}/>
   <Route exact path='/About' element={<About/>}/>
   <Route exact path='/cerebro' element={<Cerebro/>}/>
