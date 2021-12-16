@@ -3,6 +3,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import Link from "react-router-dom";
 import './article.css';
 
 import Button from '@mui/material/Button'
@@ -23,7 +24,7 @@ const ArticleCard = ({art}) => {
     </CardContent>
 
     <CardActions >
-    <Button>  <a   href={`/Articles/${art.id}`}  className="link">اقرأ المزيد</a></Button>
+    <Button>  <Link   href={`/Articles/${art.id}`}  className="link">اقرأ المزيد</Link></Button>
     </CardActions>
     </Card>
 </div>
