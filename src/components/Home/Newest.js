@@ -2,13 +2,14 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import ElectricalServicesIcon from '@mui/icons-material/ElectricalServices';
 import CastIcon from '@mui/icons-material/Cast';
+import {Link} from 'react-router-dom';
 import './home.css';
 import '../Articles/article.css';
 const Newest = ({art,cat,icon}) => {
   return (
 
 <div>
-<a     href={`/Articles/${art.id}`}  className="link">
+<Link     to={`/Articles/${art.id}`}  className="link">
 
 <Paper elevation={2} className="link-paper mobile" sx={{padding:2,
   mt:3,
@@ -32,7 +33,7 @@ const Newest = ({art,cat,icon}) => {
 <p style={{color:'rgb(150,150,150)'}}>{art.author}</p>
 <center><img src={art.image} alt='i' width='200'   /></center>
 </Paper>
-</a>
+</Link>
 </div>
   )
 }

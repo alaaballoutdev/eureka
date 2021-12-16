@@ -4,6 +4,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import {Link} from 'react-router-dom'
 const LastEvent = () => {
 const [event , setEvent]=useState();
 useEffect(()=>{
@@ -26,7 +27,7 @@ return <center><h2 style={{color:'rgb(100,100,100)'}}>...loading</h2></center>
 else{
   return (
     <div className="latest-version">
-    <a href={`/Events/${event.id}`} className="link">
+    <Link to={`/Events/${event.id}`} className="link">
     <Card sx={{width:'97%',margin:'10px'}} className='link-paper' >
       <CardMedia component="img" height="300px" alt="p"  image={event.thumbnail}/>
       <CardContent>
@@ -38,7 +39,7 @@ else{
 
 </Card>
 
-</a>
+</Link>
     </div>
   )
 }}

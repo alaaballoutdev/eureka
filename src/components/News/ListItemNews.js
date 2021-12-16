@@ -1,9 +1,10 @@
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import './news.css'
+import {Link} from 'react-router-dom';
 const ListeItemNews = ({title,date,image,newsArticle,align}) => {
   return (
-    <a href={newsArticle}
+    <Link to={newsArticle}
      style={{textDecoration:'none', color:'black'}} >
 <div style={{borderStyle:'outset',border:'0.5px solid rgb(245,245,245)',marginBottom:10,backgroundColor:'white'}}>
 
@@ -15,7 +16,7 @@ const ListeItemNews = ({title,date,image,newsArticle,align}) => {
 
         </ListItem>
       </div>
-      </a>
+      </Link>
   )
 }
 
