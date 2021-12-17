@@ -22,7 +22,7 @@ const Event = () => {
 const article =  articles.find((art)=> art.id === parseInt(id));
 if(!article){
 
-return <h1>Event Not Found</h1>
+return <h3 style={{color:'rgb(100,100,100)'}}>...Loading </h3>
 
 }
 else
