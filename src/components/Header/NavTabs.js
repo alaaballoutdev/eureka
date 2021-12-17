@@ -76,8 +76,6 @@ function LinkTab(props) {
         indicatorColor="primary"
         aria-label="scrollable auto tabs example"
         variant="scrollable"
-        scrollButtons='auto'
-        allowScrollButtonsMobile
         >
         <LinkTab label="الرئيسية" to="/" value={1} icon={<HomeIcon/>} iconPosition='top' />
 
@@ -129,6 +127,7 @@ function LinkTab(props) {
       value={valueC}
       onChange={handleChangeC}
       indicatorColor="primary"
+
 
       variant='scrollable'
       aria-label="scrollable auto tabs example"

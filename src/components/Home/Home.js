@@ -10,9 +10,7 @@ import Know from './Know'
 const Home = () => {
 return (
     <div className="Home">
- <img src='./images/home-cover.jpg' width="100%"  alt='i'  />
-
-<div className="content">
+ <div className="content">
 <div className="base">
 <Typography variant='h5' sx={{mt:3,mr:1}}>احدث المقالات</Typography>
 <NewestArticles />
