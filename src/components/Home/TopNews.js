@@ -36,7 +36,10 @@ return (<center><h4 style={{color:'rgb(100,100,100)'}}>...Loading</h4></center>)
                                   date={n.date}
                                   newsArticle={`/News/${n.id}`}
                                   image={n.image}
-                                  align={n.align}/>
+                                  align={n.align}
+                                  body={n.body}
+                                  />
+
                                 }
                               else{return null}})}
   </List>

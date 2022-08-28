@@ -8,7 +8,7 @@ const ArchivedVersion = ({version}) => {
   return (
     <a href={`../Archive/${version.name}`} className="link"><div className="cards">
 
-  <Card sx={{maxWidth:400,margin:'10px'}}  >
+  <Card sx={{maxWidth:200,margin:'10px'}}  >
     <CardMedia component="img" height="300px" alt="p"  image={version.thumbnail}/>
     <CardContent>
         <Typography gutterBottom variant='h6' color='black' align="center" component='div'>

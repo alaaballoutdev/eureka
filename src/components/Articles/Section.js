@@ -1,13 +1,13 @@
-import Typography from "@mui/material/Typography";
+
 import ImageCard from './ImageCard'
 import './article.css';
 const Section = ({subtitle, paragraph,imagesCards}) => {
   return (
 <>
-  <Typography variant="h5" sx={{color:'blue',mt:'5%',mr:'4%'}} className="subtitle">{subtitle}</Typography>
+  <h2 style={{marginTop:'5%',marginRight:'4%'}} className="subtitle">{subtitle}</h2>
 <div  className="Section-flex">
 <div className="text-flex">
-  {paragraph.map((p,index)=><p key={index} >{p}</p>)
+  {paragraph.map((p,index)=><p style={{color:'rgb(20,20,20)',fontFamily:'Arial'}} key={index} >{p}</p>)
 }</div>
 
 {imagesCards.map((c, index)=><ImageCard key={index} photo={c.photo} caption={c.caption}  />)}

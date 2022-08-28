@@ -1,8 +1,9 @@
 import {useState,useEffect} from 'react'
 import petro from '../../images/petro.png';
-import ArticleCard from '../Articles/ArticleCard'
+import ArticleCard from '../Articles/ArticleCard';
+import './categories.css';
 const Petro = () => {
-  const [cards , setCards]=useState([]);
+  const [cards , setCards]=useState();
     useEffect(()=>{
     const getCards =async  ()=>{
        await fetch("../json-data/articles.json",{
@@ -20,9 +21,17 @@ const Petro = () => {
     );
 
 
+    if(!cards){
+
+    return <div className="loading"><center><h3 >Loading...</h3></center></div>
+
+    }
+
+
 
 
   return (
+  <div className="petro">
   <center>  <div>
     <div className='cover'>
     <img  src={petro} style={{marginTop:4}} alt='petro' width='100px' height="100px"/>
@@ -35,6 +44,7 @@ else{return null}})}
 
 
     </div></center>
+    </div>
   )
 }
 

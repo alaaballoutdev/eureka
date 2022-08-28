@@ -1,10 +1,11 @@
 import {useEffect,useState} from 'react'
 import ArticleCard from '../Articles/ArticleCard';
+import './categories.css';
 
 import civil from '../../images/civil.png'
 const Civil = () => {
 
-  const [cards , setCards]=useState([]);
+  const [cards , setCards]=useState();
     useEffect(()=>{
     const getCards =async  ()=>{
        await fetch("../json-data/articles.json",{
@@ -21,12 +22,20 @@ const Civil = () => {
     getCards();
     },[]
     );
+    if(!cards){
 
+    return <div className="loading"><center><h3 >Loading...</h3></center></div>
+
+    }
+
+
+    else{
 
 
 
 
   return (
+<div  className="civil">
 <center>    <div>
 
 <div className='cover'>
@@ -40,8 +49,8 @@ if(a.category ==='civil'){
 return  <ArticleCard key={index} art={a}/>}
 else{return null}})}
 
-    </div></center>
+    </div></center></div>
   )
 }
-
+}
 export default Civil

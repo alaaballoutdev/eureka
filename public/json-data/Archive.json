@@ -2,9 +2,9 @@
 "archive":[
   {
   "id":1,
-  "title":"العدد الاول",
-"name":"m-nb1.pdf",
-"date":"صدر في 2006",
+  "title":"العدد الاول(غير متوفر)",
+"name":"",
+"date":"صدر في 2009",
 "thumbnail":"https://eurekamagazine.files.wordpress.com/2013/03/1.jpg?w=600&h=855"
 
 
@@ -12,9 +12,9 @@
 },
   {
   "id":2,
-  "title":"العددالثاني",
-"name":"m-nb2.pdf",
-"date":"صدر في 2007",
+  "title":"العددالثاني(غير متوفر)",
+"name":"",
+"date":"صدر في 2010",
 "thumbnail":"https://eurekamagazine.files.wordpress.com/2013/03/2.jpg?w=600&h=855"
 
 
@@ -24,9 +24,9 @@
 
     {
     "id":3,
-    "title":"العددالثالث",
-  "name":"m-nb3.pdf",
-  "date":"صدر في 2008",
+    "title":"العددالثالث(غير متوفر)",
+  "name":"",
+  "date":"صدر في 2010",
   "thumbnail":"https://eurekamagazine.files.wordpress.com/2013/03/3.jpg?w=600&h=834"
 
 
@@ -35,9 +35,9 @@
 
   {
     "id":4,
-    "title":"العدد الرابع",
-  "name":"m-nb4.pdf",
-  "date":"صدر في 2009-3",
+    "title":"العدد الرابع(غير متوفر)",
+  "name":"",
+  "date":"صدر في 2010",
   "thumbnail":"https://eurekamagazine.files.wordpress.com/2013/03/4.jpg?w=600&h=855"
 
 
@@ -50,9 +50,9 @@
 
   {
     "id":5,
-    "title":"العددالخامس",
-  "name":"m-nb5.pdf",
-  "date":"صدر في 2010-3",
+    "title":"العددالخامس(غير متوفر)",
+  "name":"",
+  "date":"صدر في 2010",
   "thumbnail":"https://eurekamagazine.files.wordpress.com/2013/03/5.jpg?w=600&h=837"
 
 
@@ -61,9 +61,9 @@
 
 {
   "id":6,
-  "title":"العدد السادس",
-"name":"m-nb6.pdf",
-"date":"صدر في2011 -3",
+  "title":"العدد السادس(غير متوفر)",
+"name":"",
+"date":"صدر في 2011",
 "thumbnail":"https://eurekamagazine.files.wordpress.com/2013/03/6.jpg?w=600&h=849"
 
 
@@ -71,9 +71,9 @@
 },
 {
   "id":7,
-  "title":"العدد السابع",
-"name":"m-nb7.pdf",
-"date":"صدر في 2012-3",
+  "title":"العدد السابع(غير متوفر)",
+"name":"",
+"date":"صدر في 2012",
 "thumbnail":"https://eurekamagazine.files.wordpress.com/2013/03/71.jpg?w=468&h=666"
 
 
@@ -85,9 +85,9 @@
 
 {
   "id":8,
-  "title":"العدد الثامن",
-"name":"m-nb8.pdf",
-"date":"صدر في 3-2013",
+  "title":"العدد الثامن (غير متوفر)",
+"name":"",
+"date":"صدر في 2013",
 "thumbnail":"https://eurekamagazine.files.wordpress.com/2013/06/1001829_561711227200478_465710614_n.png?w=480&h=682"
 
 
@@ -97,7 +97,7 @@
   "id":9,
   "title":"العدد التاسع",
 "name":"m-nb9.pdf",
-"date":"صدر في  3-2014",
+"date":"صدر في  2014",
 "thumbnail":"https://eurekamagazine.files.wordpress.com/2014/05/cover-no9.jpg?w=600"
 
 
@@ -109,7 +109,7 @@
   "title":"العدد الثاني عشر",
 "name":"m-nb12.pdf",
 "date":"صدر في 2018",
-"thumbnail":"../images/m12.jpg"
+"thumbnail":"../images/archive/m-12.jpg"
 
 
 
@@ -119,7 +119,7 @@
   "title":"العددالثالث عشر",
 "name":"m-nb13.pdf",
 "date":"صدر في 2019",
-"thumbnail":"../images/m13.png"
+"thumbnail":"../images/about.jpeg"
 
 
 

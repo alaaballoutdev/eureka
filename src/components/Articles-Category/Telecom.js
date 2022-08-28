@@ -1,8 +1,9 @@
 import {useState,useEffect} from 'react'
 import ArticleCard from '../Articles/ArticleCard';
 import CastIcon from '@mui/icons-material/Cast';
+import './categories.css';
 const Telecom = () => {
-  const [cards , setCards]=useState([]);
+  const [cards , setCards]=useState();
     useEffect(()=>{
     const getCards = async  ()=>{
        await fetch("../json-data/articles.json",{
@@ -19,10 +20,17 @@ const Telecom = () => {
     },[]
     );
 
+    if(!cards){
+
+    return <div className="loading"><center><h3 >Loading...</h3></center></div>
+
+    }
+
 
 
 
   return (
+<div className="telecom">
   <center>  <div>
     <div className='cover'>
     <CastIcon sx={{width:100,height:100}}/>
@@ -35,6 +43,7 @@ else{return null}})}
 
 
     </div></center>
+    </div>
   )
 }
 

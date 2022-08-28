@@ -8,13 +8,13 @@ import '../Articles/article.css';
 const Newest = ({art,cat,icon}) => {
   return (
 
-<div>
+<div >
 <Link     to={`/Articles/${art.id}`}  className="link">
 
-<Paper elevation={2} className="link-paper mobile" sx={{padding:2,
+<Paper  className="link-paper" sx={{padding:2,
   mt:3,
   mr:3,
-  width:250
+  width:240
   ,height:350
   ,direction:'rtl'
   ,alignContent:'center'}}>
@@ -31,10 +31,11 @@ const Newest = ({art,cat,icon}) => {
 </div>
 <h4 style={{marginTop:0,marginBottom:0}}>{art.title}</h4>
 <p style={{color:'rgb(150,150,150)'}}>{art.author}</p>
-<center><img src={art.image} alt='i' width='200'   /></center>
+<center><img src={art.image} alt='i' width='190'   /></center>
 </Paper>
 </Link>
 </div>
+
   )
 }
 

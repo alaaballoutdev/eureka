@@ -34,7 +34,7 @@ else{
           <Typography gutterBottom variant='h6' color='black' align="right" component='div'>
           {event.title}
           </Typography>
-
+<p>{event.body[0]}</p>
       </CardContent>
 
 </Card>

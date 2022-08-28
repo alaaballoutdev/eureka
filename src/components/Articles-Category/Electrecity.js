@@ -1,10 +1,11 @@
 import {useEffect,useState} from 'react'
 import ArticleCard from '../Articles/ArticleCard';
+import './categories.css';
 
 import ElectricalServicesIcon from '@mui/icons-material/ElectricalServices';
 const Civil = () => {
 
-  const [cards , setCards]=useState([]);
+  const [cards , setCards]=useState();
     useEffect(()=>{
     const getCards = async ()=>{
        await fetch("../json-data/articles.json").then(res=>res.json()).then(data=>{
@@ -17,11 +18,16 @@ const Civil = () => {
     },[]
     );
 
+    if(!cards){
 
+    return <div className="loading"><center><h3 >Loading...</h3></center></div>
+
+    }
 
 
 
   return (
+<div className="electrecity">
 <center>    <div>
 
 <div className='cover'>
@@ -35,7 +41,7 @@ if(a.category ==='electrecity'){
 return  <ArticleCard key={index} art={a}/>}
 else{return null}})}
 
-    </div></center>
+    </div></center></div>
   )
 }
 

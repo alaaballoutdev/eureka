@@ -43,8 +43,7 @@ return ()=>{
   return (
 
 
-
-    <div className='flex-newest-articles'>
+  <div className='flex-newest-articles'>
 
 {general?<Newest art={general} cat='مواضيع عامة' icon={generalo} />:null}
 {civil?<Newest art={civil} cat='مدني' icon={civilo}  />:null}

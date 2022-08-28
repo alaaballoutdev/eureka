@@ -2,11 +2,11 @@ import {useEffect,useState} from 'react'
 import Video from './Video';
 import './cerebro.css'
 const Cerebro = () => {
-const [msg, setMsg]=useState('please wait');
-  const [cards,setCards]=useState([]);
+const [msg, setMsg]=useState('Please Wait');
+  const [cards,setCards]=useState();
   useEffect(()=>{
-  const getCard = async  ()=>{
-   await fetch("./json-data/cerebro.json").then(res=>res.json()).then(data=>setCards(data.videos))
+  const getCard =   ()=>{
+    fetch("./json-data/cerebro.json").then(res=>res.json()).then(data=>setCards(data.videos))
   .catch(err=>console.log(err));
 
   }
@@ -16,9 +16,11 @@ const [msg, setMsg]=useState('please wait');
   );
 
 setTimeout(()=>setMsg(''),3000);
-
+if(!cards){
+  return <div className="loading" ></div>
+}
   return (
-    <div className='cerebro'>
+    <div className='cerebro' style={{backgroundColor:'rgb(245,245,245)'}}>
 
 <center>
 <h2 style={{color:'rgb(100,100,100)'}}>{msg}</h2>

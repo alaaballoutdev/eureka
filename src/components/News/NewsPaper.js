@@ -1,35 +1,46 @@
 import {useState ,useEffect}from 'react'
 import Typography from "@mui/material/Typography";
-
+import NotFound from '../NotFound'
 import Section from '../Articles/Section'
 import {useParams} from 'react-router-dom';
 
 const NewsPaper = () => {
-const [articles , setArticles]=useState([]);
+const [articles , setArticles]=useState();
 
 useEffect(()=>{
-const getArticles = async ()=>{
-  await fetch("../json-data/news.json")
-  .then(res=>res.json())
-  .then(data=>setArticles(data.news))
-  .catch(err=>console.log(err));
-  }
 
-  getArticles();
-  },[]
-  );
+      let isActive=true;
+
+async function fetchData (){
+try{
+let res= await fetch("../json-data/news.json")
+let data=await res.json();
+if(isActive){
+    setArticles(data.news);}
+}
+catch(err){
+console.log(err);
+}
+}
+fetchData();
+    return ()=>{isActive=false;};
+},[setArticles]);
 
 const {id }=useParams();
-const article =  articles.find((art)=> art.id === parseInt(id));
 
 
-
-if(!article){
-return (<center><h2 style={{color:'rgb(100,100,100)'}}>...loading</h2></center>)
-
-
+if(!articles){
+  return <div className="loading"><center><h1 style={{color:'rgb(100,100,100)'}}>...Loading</h1></center></div>
 }
 else{
+const article= articles.find((art)=> art.id === parseInt(id));
+
+if(!article){
+return <NotFound />
+}
+
+
+
 
   return (
 

@@ -22,12 +22,15 @@ import Telecom from './components/Articles-Category/Telecom';
 import MagazineFile from './components/Magazine/MagazineFile';
 import Interview from './components/Magazine/Interview';
 import Archive  from  './components/Archive/Archive.js';
+import ScrollToTop from './components/ScrollToTop';
+import NotFound from './components/NotFound'
 import './App.css'
 
 ReactDOM.render(
 <Router>
-<div className="App">
+<div className="App" >
 <Header />
+<ScrollToTop />
 <Routes>
   <Route exact path="/" element={<Home/>} />
   <Route exact path="/News" element={<News />} />
@@ -47,10 +50,12 @@ ReactDOM.render(
   <Route exact path={`/Articles/Telecom`} element={<Telecom/>}/>
   <Route exact path={`/magazine-f`} element={<MagazineFile/>}/>
   <Route exact path={`/interview`} element={<Interview/>}/>
-  <Route exact path={`/archive`} element={<Archive/>}/>
+  <Route exact path={`/Archive`} element={<Archive/>}/>
+  <Route path="*"element={<NotFound/>}/>
 </Routes>
+
 </div>
-<Footer />
+<Footer/>
   </Router>,
   document.getElementById('root')
 );

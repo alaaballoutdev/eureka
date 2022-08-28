@@ -3,37 +3,43 @@ import ArticleCard from './ArticleCard'
 import './article.css';
 const ArticlesCards = () => {
 
-const [cards,setCards]=useState([]);
+const [cards,setCards]=useState();
 useEffect(()=>{
-const getCard =  ()=>{
- fetch("./json-data/articles.json").then(res=>res.json()).then(data=>setCards(data.articles.reverse()))
-.catch(err=>console.log(err));
+
+
+
+async function fetchData (){
+try{
+let res= await fetch("../json-data/articles.json")
+let data=await res.json();
+setCards(data.articles);}
+
+catch(err){
+console.log(err);
+}
+}
+fetchData();
+
+},[]);
+
+
+
+if(!cards){
+
+return <div className="loading"><center><h3 >Loading...</h3></center></div>
 
 }
 
-getCard();
-
-},[]
-);
-
-
-
-if(cards ===[]){
-
-return <h1>Loading...</h1>
-
-}
-
-
+else{
 
   return (
 
-<center><div className="articles-cards">
+<center><div className="articles-cards" style={{marginTop:50}}>
 {cards.map((card,index)=>card.id< 100 ? <ArticleCard key={index} art={card}/>:null)}
 </div></center>
 
 
   )
 }
-
+}
 export default ArticlesCards

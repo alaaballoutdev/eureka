@@ -1,13 +1,16 @@
 footer{
-margin-bottom:0px;
+bottom:0px;
 background-color: rgb(25,25,25);
 color :white;
-padding:20px;
+padding:5px;
+left: 0px;
+right:0px;
 
-margin-top:10%;
+
 }
 .social-icon{
 margin-right:15px;
+
 }
 .f-about{
   float:right;

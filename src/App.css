@@ -1,29 +1,63 @@
 html,body{
   margin:0px;
 padding: 0px;
-height: 100%;
+
 }
+
 #logo{
-margin-top: 0px;
+width:230px;
+
+}
+.toolbar{
+  display: inline-flex;
+}
+.toolbar>video {
+   margin-right: 37%;
+}
+@media only screen and (max-width:750px){
+    #logo{
+        width:170px;
+        }
+    .toolbar>video {
+          margin-right:28%;
+        }
+}
+
+@media only screen and (max-width:400px){
+
+    .toolbar>video {
+        margin-right:17%;
+      }
+
+}
+
+.cerebro{
+  padding: 20px;
 }
 
 
+.loading{
+  height:100vh;
 
+}
 
 
 .link{
   text-decoration: none;
 }
 
+
 .link:visited{
 color:blue;
 }
+
 
 @media (hover: hover) and (pointer: fine) {
   .link-paper:hover{
     transform: perspective(200px) translateY(-30px);
     }
 }
+
 
 .link-paper{
 margin: 10px;
@@ -34,9 +68,7 @@ margin-left:10px;
 
 .link-paper{
 width:100%;
-
 }
-
 
 }
 
@@ -44,8 +76,9 @@ width:100%;
 height:8%;
 background-color: rgb(245,245,245);
 text-align: center;
-padding: 1px;
+padding: 5px;
 color:black;
+margin-bottom: 30px;
 }
 
 
@@ -53,4 +86,7 @@ color:black;
 
 .App{
 direction:rtl;
+}
+.not-found{
+  height:100vh;
 }

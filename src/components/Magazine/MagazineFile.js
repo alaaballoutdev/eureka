@@ -17,7 +17,7 @@ getArticles();
 },[]
 );
 if(!article){
-  return <center><h2 style={{color:'rgb(100,100,100)'}}>...loading</h2></center>
+  return <div className="loading"><center><h2 style={{color:'rgb(100,100,100)'}}>...loading</h2></center></div>
 }
 
 

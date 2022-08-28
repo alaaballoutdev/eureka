@@ -3,9 +3,10 @@ import Typography from'@mui/material/Typography'
 import { Carousel } from 'react-carousel-minimal';
 import ReactPlayer from 'react-player/facebook'
 import {useParams} from 'react-router-dom';
+import NotFound from '../NotFound'
 import './event.css'
 const Event = () => {
-  const [articles , setArticles]=useState([]);
+  const [articles , setArticles]=useState();
     useEffect(()=>{
     const getArticles = async ()=>{
       await fetch("../json-data/events.json").then(res=>res.json()).then(data=>setArticles(data.events))
@@ -19,13 +20,16 @@ const Event = () => {
 
 
     const {id }=useParams();
-const article =  articles.find((art)=> art.id === parseInt(id));
+    if(!articles){
+      return <div className="loading"><center><h1 style={{color:'rgb(100,100,100)'}}>...Loading</h1></center></div>
+    }
+    else{
+const article= articles.find((art)=> art.id === parseInt(id));
+
 if(!article){
-
-return <h3 style={{color:'rgb(100,100,100)'}}>...Loading </h3>
-
+return <NotFound />
 }
-else
+
 
 return (
   <div className='event'>
@@ -38,7 +42,7 @@ return (
             data={article.images}
             time={4000}
             width="850px"
-            height="500px"
+
 
             radius="10px"
             slideNumber={false}
@@ -54,8 +58,8 @@ return (
             thumbnailWidth="100px"
             style={{
               textAlign: "center",
-              maxWidth: "850px",
-              maxHeight: "500px",
+              maxWidth: "600px",
+
               margin: "40px auto",
               direction:'ltr'
             }} />
@@ -65,10 +69,10 @@ return (
       </div>
 
   <center>
-      <ReactPlayer url={article.videoUrl} controls wrapper='div' width="60%"height='60%' className='videos'/>
+      <ReactPlayer url={article.videoUrl} controls wrapper='div' width="50%"height='50%' className='videos'/>
   </center>
     </div>
   )
-}
+}}
 
 export default Event

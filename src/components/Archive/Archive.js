@@ -17,7 +17,7 @@ const [archive ,setArchive]=useState();
 
 if(!archive){
 
-return    <h3  style={{textAlign:'center',color:'rgb(100,100,100)'}}>...Loading</h3>
+return   <div className="loading"> <h3  style={{textAlign:'center',color:'rgb(100,100,100)'}}>...Loading</h3></div>
 
 
 }

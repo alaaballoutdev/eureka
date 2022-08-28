@@ -1,6 +1,7 @@
 import React,{useState ,useEffect}from 'react'
 import Typography from "@mui/material/Typography";
 import Section from './Section'
+import NotFound from '../NotFound'
 import './article.css'
 
 import {useParams} from 'react-router-dom';
@@ -8,39 +9,40 @@ import {useParams} from 'react-router-dom';
 const Article = () => {
     const {id }=useParams();
 
-    const [articles , setArticles]=useState([]);
+    const [articles , setArticles]=useState();
 
     useEffect(()=>{
 
           let isActive=true;
 
-             fetch("../json-data/articles.json").then(res=>res.json()).then(data=>{
-               if(isActive){
-                 setArticles(data.articles);}
+async function fetchData (){
+try{
+  let res= await fetch("../json-data/articles.json")
+  let data=await res.json();
+  if(isActive){
+        setArticles(data.articles);}
+  }
+  catch(err){
+    console.log(err);
+  }
+  }
+  fetchData();
+        return ()=>{isActive=false;};
+},[setArticles]);
 
 
-             }).catch(err=>console.log(err));
-
-
-
-
-
-
-
-
-        return ()=>{
-          isActive=false;
-        };
-      },[]);
-
+      if(!articles){
+        return <div className="loading"><center><h1 style={{color:'rgb(100,100,100)'}}>...Loading</h1></center></div>
+      }
+else{
 const article= articles.find((art)=> art.id === parseInt(id));
 
-
 if(!article){
-  return <center><h1 style={{color:'rgb(100,100,100)'}}>...Loading</h1></center>
+  return <NotFound />
 }
 
-else{
+
+
 
   return (
 

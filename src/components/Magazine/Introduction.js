@@ -11,14 +11,15 @@ useEffect(()=>{
 
 if(!intro){
 
-return <center><h2 style={{color:'rgb(100,100,100)'}}>...loading</h2></center>
+return <div className="loading"><center><h2 style={{color:'rgb(100,100,100)'}}>...loading</h2></center></div>
 
 }
 else
 {
 
   return (
-<><div className="cover"><TipsAndUpdatesIcon sx={{height:100,width:100}}/></div>
+<div className="intro">
+<div className="cover"><TipsAndUpdatesIcon sx={{height:100,width:100}}/></div>
     <div className="introduction">
 
 <center><Typography align='center'variant="h4" >{intro.title}</Typography>
@@ -33,7 +34,8 @@ else
 </div>
 
 
-    </div></>
+    </div>
+    </div>
   )}
 }
 
