@@ -29,7 +29,7 @@ This magazine contains scientific articles published, news of faculty, club even
 
 ### Mobile Design
 
-![](./ScreenShots/Home.png)
+![](./ScreenShots/Mobile.png)
 
 ## My process
 ### Built with
