@@ -1,2 +1,0 @@
-fix newest articles build first
-change the font and ignore typography
