@@ -1,6 +1,6 @@
 # Eureka Magazine Scientific
 
-This my first official project using React JS. Eureka Magazine is the digital version of scientific magazine, issued annually in the Lebanese University - Faculty of Engineering , with an impressive content about science in general, and engineering espacially.
+This is my first official project using React JS. Eureka Magazine is the digital version of scientific magazine, issued annually in the Lebanese University - Faculty of Engineering , with an impressive content about science in general, and engineering espacially.
 
 ## Table of contents
 
