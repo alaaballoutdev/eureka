@@ -11,7 +11,7 @@ const Header = () => {
   const desktop = useMediaQuery('(min-width:600px)');
   const [nav,setNav]=useState(false);
   const [openedTab,setOpenedTab]=useState('');
-  const [value,setValue]= useState(1);  
+  const [value,setValue]= useState(0);  
   const openTab = (tabname)=>{
     switch(tabname){
       case 'Magazine':{
