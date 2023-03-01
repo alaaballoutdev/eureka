@@ -1,33 +1,37 @@
 import {useEffect, useState} from 'react'
-import Newest from './Newest';
+import NewestArticleByCategory from './NewestArticleByCategory';
+import { Typography } from '@mui/material';
 import './home.css';
-import  civilo  from'../../images/civil.png';
-import mechanicalo from '../../images/mechanical.png';
-import generalo from '../../images/eureka.png';
-import petrol from '../../images/petro.png'
-
+import  civilIcon  from'../../images/civil.png';
+import mechanicalIcon from '../../images/mechanical.png';
+import generalIcon from '../../images/eureka.png';
+import petrolIcon from '../../images/petro.png'
+import {ElectricalServices,Cast} from '@mui/icons-material';
 const NewestArticles = () => {
-
   const [cards,setCards]=useState([]);
-
   useEffect(()=>{
-  let isActive=true;
-   fetch("./json-data/articles.json").then(res=>res.json()).then(data=>{
-if(isActive){
-     setCards(data.articles.reverse())}
-   })
-      .catch(err=>console.log(err));
+    let isActive=true;
+    const fetchData=async ()=>{
+      
+     await fetch("./json-data/articles.json").then(res=>res.json()).then(data=>{
+      
+        if(isActive){
+        setCards(data.articles.reverse())}
+      }).catch(err=>console.log(err));
+  
 
+    }
+   fetchData();
 
+    return ()=>{
+      isActive=false;
+    }
 
-return ()=>{
-  isActive=false;
-}
 
   },[]
   );
 
-  const civil= cards.find((c)=>c.category ==='civil');
+  const civil=  cards.find((c)=>c.category ==='civil');
 
   const mechanical=cards.find((c)=>c.category==='mechanical');
 
@@ -41,17 +45,18 @@ return ()=>{
 
 
   return (
+    <div>
+    <Typography variant='h5' sx={{mt:3,mr:1}}>احدث المقالات</Typography>
+    <div className='flex-newest-articles'>
 
+      <NewestArticleByCategory article={general} category='مواضيع عامة' icon={generalIcon} />
+      <NewestArticleByCategory article={civil} category='مدني' icon={civilIcon}  />
+      <NewestArticleByCategory article={mechanical} category='ميكانيك' icon={mechanicalIcon} />
+      <NewestArticleByCategory article={petro } category='بتروكيمياء' icon={petrolIcon}  />
+      <NewestArticleByCategory article={electrecity} category='كهرباء' materialIcon={<Cast/>} />
+      <NewestArticleByCategory article={telecom} category='اتصالات' materialIcon={<ElectricalServices/>}/>
 
-  <div className='flex-newest-articles'>
-
-{general?<Newest art={general} cat='مواضيع عامة' icon={generalo} />:null}
-{civil?<Newest art={civil} cat='مدني' icon={civilo}  />:null}
-{mechanical?<Newest art={mechanical} cat='ميكانيك' icon={mechanicalo} />:null}
-{petro?<Newest art={petro } cat='بتروكيمياء' icon={petrol}  />:null}
-{electrecity?<Newest art={electrecity} cat='كهرباء' />:null}
-{telecom?<Newest art={telecom} cat='اتصالات'/>:null}
-
+</div>
 </div>
 
 )

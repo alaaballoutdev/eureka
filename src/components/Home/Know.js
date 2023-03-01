@@ -6,7 +6,7 @@ const Know = () => {
   const [images,setImages]=useState();
   useEffect(()=>{
   const getArticles = async ()=>{
-    await fetch("../json-data/Know.json").then(res=>res.json()).then(data=>setImages(data.know))
+    await fetch("../json-data/Knowledge.json").then(res=>res.json()).then(data=>setImages(data.know))
     .catch(err=>console.log(err));
 
   }

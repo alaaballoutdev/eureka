@@ -1,5 +1,5 @@
 import {useState,useEffect} from 'react'
-import Typography from'@mui/material/Typography'
+import {Typography} from'@mui/material'
 import { Carousel } from 'react-carousel-minimal';
 import ReactPlayer from 'react-player/facebook'
 import {useParams} from 'react-router-dom';

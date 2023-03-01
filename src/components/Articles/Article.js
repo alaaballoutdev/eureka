@@ -1,5 +1,5 @@
 import React,{useState ,useEffect}from 'react'
-import Typography from "@mui/material/Typography";
+import {Typography} from "@mui/material";
 import Section from './Section'
 import NotFound from '../NotFound'
 import './article.css'

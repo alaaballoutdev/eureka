@@ -11,21 +11,24 @@
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "babel-plugin-import": "^1.13.6",
+    "customize-cra": "^1.0.0",
     "react": "^17.0.2",
+    "react-app-rewired": "^2.2.1",
     "react-carousel-minimal": "^1.4.1",
     "react-dom": "^17.0.2",
     "react-player": "^2.9.0",
     "react-router-dom": "^6.0.2",
-    "react-scripts": "4.0.3",
-    "react-social-icons": "^5.6.1",
+    "react-scripts": "^5.0.1",
+    "source-map-explorer": "^2.5.3",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "json-server --watch db.json --port 5000"
+    "start": "react-app-rewired   --openssl-legacy-provider start",
+    "build": "react-app-rewired  build",
+    "test": "react-app-rewired  test",
+    "analyze": "source-map-explorer 'build/static/js/*.js' ",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

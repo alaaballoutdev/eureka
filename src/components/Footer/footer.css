@@ -1,17 +1,14 @@
-footer{
-bottom:0px;
+.footer{
 background-color: rgb(25,25,25);
 color :white;
-padding:5px;
-left: 0px;
-right:0px;
+padding: 3px;
+position: relative;
+bottom: 0px;
+width: 100%;
 
-
+height: 50px;
 }
-.social-icon{
-margin-right:15px;
 
-}
 .f-about{
   float:right;
 }

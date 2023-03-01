@@ -5,13 +5,15 @@ import './home.css';
 const TopNews = () => {
 const[news,setNews]=useState();
 useEffect(()=>{
-const getCard= async ()=> { await fetch("./json-data/news.json").then(res=>res.json()).then(data=>{setNews(data.news.reverse())
-  })
-     .catch(err=>console.log(err));
-   }
-   getCard();
+  const getCard= async ()=> { 
+    await fetch("./json-data/news.json").then(res=>res.json()).then(data=>{setNews(data.news.reverse())})
+    .catch(err=>console.log(err));
+  }
+  getCard();
 
-},[])
+},[]);
+
+
 if(!news){
 
 return (<center><h4 style={{color:'rgb(100,100,100)'}}>...Loading</h4></center>)
