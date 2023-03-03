@@ -2,10 +2,8 @@ import {  Archive, Article, Feed,
     Home, ImportContacts, Info, 
      OndemandVideo,
   }  from '@mui/icons-material';
-import {Tabs,Tab} from '@mui/material';
-
+import {Tabs} from '@mui/material';
 import LinkTab from './LinkTab';
-import {withStyles} from '@mui/styles';
 import { Link } from 'react-router-dom';
 
 const InitialTabs = ({openTab,value,setValue}) => {
@@ -14,7 +12,7 @@ const InitialTabs = ({openTab,value,setValue}) => {
     setValue(newValue);
   }
   
-  const CustomTab = withStyles({root: {textTransform: "none",},})(Tab);
+
     return (
   
         <Tabs value={value} 
@@ -27,7 +25,7 @@ const InitialTabs = ({openTab,value,setValue}) => {
     
         <LinkTab  label='المقالات' icon={<Article/>} to="/Articles" onClick={()=>openTab('Category')}/>
     
-        <CustomTab component={Link} label='Cerebro' to="/cerebro" onClick={()=>openTab('')} icon={<OndemandVideo/>} iconPosition='top' sx={{fontSize:13}}/>
+        <LinkTab  component={Link} label='Cerebro' to="/cerebro" onClick={()=>openTab('')} icon={<OndemandVideo/>} iconPosition='top' sx={{fontSize:13}}/>
     
     
         <LinkTab label="أخبار" to="/News" icon={<Feed/>} iconPosition='top' onClick={()=>openTab('News')}/>

@@ -2,7 +2,7 @@ import {useEffect,useState} from 'react'
 import ArticleCard from '../Articles/ArticleCard';
 import './categories.css';
 
-import civil from '../../images/civil.png'
+import civil from '../../images/civil.svg'
 const Civil = () => {
 
   const [cards , setCards]=useState();

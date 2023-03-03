@@ -1,5 +1,4 @@
 import {useEffect,useState} from 'react'
-import {Typography} from '@mui/material'
 import Slider from './Slider';
 
 const ImageCarousel = ({type,title}) => {
@@ -23,7 +22,7 @@ else{
   return (
 
     <div className="slider-card">
-      <Typography variant="h5" sx={{mb:1}}>{title}</Typography>
+      <h2>{title}</h2>
       <Slider images={images}/>  
   </div>
 

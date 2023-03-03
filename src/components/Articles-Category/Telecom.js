@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react'
 import ArticleCard from '../Articles/ArticleCard';
-import CastIcon from '@mui/icons-material/Cast';
+import telecomIcon from '../../images/telecom.svg'
 import './categories.css';
 const Telecom = () => {
   const [cards , setCards]=useState();
@@ -33,7 +33,7 @@ const Telecom = () => {
 <div className="telecom">
   <center>  <div>
     <div className='cover'>
-    <CastIcon sx={{width:100,height:100}}/>
+    <img src={telecomIcon} width={100} alt='telecom' height={100}/>
 </div>
 {cards.map((a,index)=>{
 if(a.category ==='telecom'){

@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react'
-import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
-import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
+import {VideoCameraFront,FormatQuote} from '@mui/icons-material';
+
 import Section from '../Articles/Section'
 import './magazine.css';
 const Interview = () => {
@@ -19,7 +19,7 @@ else
   return (
 <div className="inter">
     <div className="cover">
-      <VideoCameraFrontIcon sx={{width:100,height:100}}/>
+      <VideoCameraFront sx={{width:100,height:100}}/>
     </div>
     <div className="interview">
 
@@ -29,7 +29,7 @@ else
     <p style={{color:'rgb(100,100,100)'}}>{interview.date}</p>
 </center>
 <div className='dialog'>
-<FormatQuoteIcon/>
+<FormatQuote/>
 <p>{interview.dialog}</p>
 </div>
 <center><img src={interview.image} alt='i' className="initial-image"/></center>

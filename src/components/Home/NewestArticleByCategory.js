@@ -1,4 +1,4 @@
-import {Typography,Paper} from '@mui/material';
+import {Paper} from '@mui/material';
 import {Link} from 'react-router-dom';
 import '../Articles/article.css';
 
@@ -28,15 +28,15 @@ const NewestArticleByCategory = ({article,category,icon,materialIcon}) => {
       
       <Paper  className="link-paper" sx={paperStyle}>
         
-        <div style={{display:'flex'}}>
+        <div style={{display:'flex',alignItems:'center'}}>
           
          
-          <span style={{marginLeft:5}}>
+          <span style={{marginLeft:10}}>
           { icon? <img  width={30} src={icon} alt='i'/>:materialIcon}
           </span>
             
             <span>
-              <Typography  variant='body1'sx={{color:'rgb(100,100,100)'}} >{category}</Typography>
+              <h4 >{category}</h4>
             </span>
         </div>
         

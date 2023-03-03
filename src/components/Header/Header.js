@@ -1,10 +1,12 @@
 import {AppBar,useMediaQuery} from '@mui/material';
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 import CategoryTabs from './CategoryTabs';
-import {KeyboardArrowDown, KeyboardArrowUp, Menu} from  '@mui/icons-material';
+import { KeyboardArrowDown, KeyboardArrowUp, Menu} from  '@mui/icons-material';
 import NewsTabs from './NewsTabs';
 import MagazineTabs from './MagazineTabs';
 import InitialTabs from './InitialTabs';
+import { useLocation } from 'react-router-dom';
+import { CategoryMap, InitialMap, MagazineMap, NewsMap } from './HeaderMaps';
 
 const Header = () => {
 
@@ -12,25 +14,53 @@ const Header = () => {
   const [nav,setNav]=useState(false);
   const [openedTab,setOpenedTab]=useState('');
   const [value,setValue]= useState(0);  
-  const openTab = (tabname)=>{
-    switch(tabname){
-      case 'Magazine':{
-        setOpenedTab(tabname)
-        break;
-      }
-      case 'News':{
-        setOpenedTab(tabname);
-        break;
-      }
-      case 'Category':{
-        setOpenedTab(tabname);
-        break;
-      }
-      default:{
-      setOpenedTab(tabname);
-        break;
-      }
+  const [valueMagazine,setValueMagazine]=useState(1);
+  const [valueNews,setValueNews]=useState(1);
+  const [valueCategory,setValueCategory]= useState(1);
+  const {pathname}= useLocation();
+  
+
+ 
+   useEffect(()=>{
+    
+    
+    const handlePathname= ()=>{
+        if(pathname.includes('/Articles')){
+          setValue(2)
+          openTab('Category')
+          setValueCategory(CategoryMap.get(pathname))
+          return ;
+        }
+        if(pathname==='/News' || pathname==='/Events'){
+          setValue(4);
+          openTab('News');
+          setValueNews(NewsMap.get(pathname));
+          return ;
+        }
+        if(pathname==='/intro'||pathname==='/magazine-f'||pathname==='/interview'){
+          setValue(1);
+          openTab('Magazine');
+          setValueMagazine(MagazineMap.get(pathname))
+          return;
+        }
+        setValue(InitialMap.get(pathname))
+
+
     }
+  
+    
+    handlePathname();
+
+
+  },[pathname]);
+
+
+  
+  const openTab = (tabname)=>{
+    setOpenedTab(tabname);
+    setValueMagazine(1);
+    setValueNews(1);
+    setValueCategory(1);
   }
   const setNavigationDesktop= (navigation)=>{
     if(window && window.innerWidth>600){
@@ -39,6 +69,8 @@ const Header = () => {
  
 
   }
+  
+
   return (
     
     <AppBar position="absolute" sx={{backgroundColor:'white'}} 
@@ -59,9 +91,9 @@ const Header = () => {
       <div className='initial-tabs-wrapper'>
         {nav? <InitialTabs value={value} setValue={setValue} openTab={openTab}/>:<></>}
       </div>
-      {nav&&openedTab==='Category' ? <CategoryTabs   />:<></> }
-      {nav&&openedTab==='News' ? <NewsTabs />:<></>}
-      {nav&&openedTab==='Magazine'? <MagazineTabs />:<></>}
+      {nav&&openedTab==='Category' ? <CategoryTabs value={valueCategory} setValue={setValueCategory}  />:<></> }
+      {nav&&openedTab==='News' ? <NewsTabs value={valueNews} setValue={setValueNews} />:<></>}
+      {nav&&openedTab==='Magazine'? <MagazineTabs value={valueMagazine} setValue={setValueMagazine} />:<></>}
     </AppBar>    
     
 

@@ -3,9 +3,16 @@ background-color: rgb(225,225,225);
 }
 .c{
   min-height: 100vh;
-
-
 }
+.list-item-text{
+ 
+  margin-right: 10px;
+}
+.news-date{
+  color: gray;
+}
+
+
 @media only screen and (max-width:500px){
 .news-image{
   width:70px;

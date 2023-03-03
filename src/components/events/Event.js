@@ -1,5 +1,4 @@
 import {useState,useEffect} from 'react'
-import {Typography} from'@mui/material'
 import { Carousel } from 'react-carousel-minimal';
 import ReactPlayer from 'react-player/facebook'
 import {useParams} from 'react-router-dom';
@@ -34,7 +33,7 @@ return <NotFound />
 return (
   <div className='event'>
       <center>
-      <Typography variant='h5' sx={{mt:4}}>{article.title}</Typography>
+      <h1>{article.title}</h1>
       <p style={{marginTop:1,color:'rgb(100,100,100)'}}>{article.date}</p>
       </center>
 

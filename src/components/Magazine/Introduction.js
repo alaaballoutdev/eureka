@@ -1,6 +1,5 @@
 import {useState,useEffect} from 'react';
-import Typography from '@mui/material/Typography';
-import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
+import {TipsAndUpdates} from '@mui/icons-material';
 import './magazine.css'
 const Introduction = () => {
 const [intro,setIntro]=useState();
@@ -18,23 +17,18 @@ else
 {
 
   return (
-<div className="intro">
-<div className="cover"><TipsAndUpdatesIcon sx={{height:100,width:100}}/></div>
-    <div className="introduction">
-
-<center><Typography align='center'variant="h4" >{intro.title}</Typography>
-<Typography variant='body1'align='center'>{intro.date}</Typography></center>
-<div className='intro-flex'>
-
-
-<img src={intro.image} alt='i' className='m-image'/>
-<div className="intro-body">
-{intro.body.map((p,index)=><p key={index}>{p}</p>)}
-</div>
-</div>
-
-
-    </div>
+    <div className="intro">
+      <div className="cover"><TipsAndUpdates sx={{height:100,width:100}}/></div>
+        <div className="introduction">
+          <h1 className='intro-title'>{intro.title}</h1>
+          <p className='intro-date'>{intro.date}</p>
+          <div className='intro-flex'>
+          <img src={intro.image} alt='i' className='m-image'/>
+          <div className="intro-body">
+            {intro.body.map((p,index)=><p key={index}>{p}</p>)}
+          </div>
+        </div>
+      </div>
     </div>
   )}
 }

@@ -1,5 +1,6 @@
 import {useState,useEffect} from 'react';
 import ArchivedVersion from './ArchivedVersion';
+import './archive.css';
 const Archive = () => {
 const [archive ,setArchive]=useState();
 

@@ -1,9 +1,8 @@
 import {useState,useEffect} from 'react'
-import Typography from '@mui/material/Typography';
 import Section from '../Articles/Section';
-
 import './magazine.css';
-import AttachFileIcon from '@mui/icons-material/AttachFile';
+import {AttachFile} from '@mui/icons-material';
+
 const MagazineFile = () => {
 const [article, setArticle]=useState();
 useEffect(()=>{
@@ -23,19 +22,18 @@ if(!article){
 
 
   return (
-<>
-<div className="cover"><AttachFileIcon sx={{width:100,height:100}}/></div>
-    <div className="article file"  >
-
-  <center><Typography variant="h4" className="Title">{article.title}</Typography>
-  <h4 className="author">{article.author} </h4>
-  <img className="initial-image" alt='i' src={article.image} /></center>
-  <div className="body">
-
-    {article.body.map((s,index)=>
-       <Section key={index} paragraph={s.paragraph} subtitle={s.subtitle} imagesCards={s.imagesCards} />
-     )}</div>
-</div></>
+    <div>
+      <div className="cover"><AttachFile sx={{width:100,height:100}}/></div>
+        <div className="article-file"  >
+          <h1 className='magazine-file-title'>{article.title}</h1>
+          <h4 className="author">{article.author} </h4>
+          <img className="initial-image" alt='i' src={article.image} />
+        <div className="body">
+          {article.body.map((s,index)=>
+            <Section key={index} paragraph={s.paragraph} subtitle={s.subtitle} imagesCards={s.imagesCards} />
+          )}</div>
+      </div>
+    </div>
   )
 }
 

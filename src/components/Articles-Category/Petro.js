@@ -1,5 +1,5 @@
 import {useState,useEffect} from 'react'
-import petro from '../../images/petro.png';
+import petro from '../../images/petro.svg';
 import ArticleCard from '../Articles/ArticleCard';
 import './categories.css';
 const Petro = () => {

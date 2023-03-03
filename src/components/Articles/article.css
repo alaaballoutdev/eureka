@@ -1,7 +1,9 @@
-
 .Section-flex{
   display: inline-flex;
   margin-bottom: 0px;
+}
+.title, .author{
+  text-align: center;
 }
 
 .text-flex{
@@ -23,7 +25,9 @@ color:rgb(100,100,100)
 }
 
 .article{
-margin: 20px;
+margin: auto;
+width: 93%;
+
 }
 
 
@@ -38,12 +42,15 @@ line-height:35px;
 font-size: 20px;
 color:black;
 }
-
+.image-wrapper{
+  width: 60%;
+  margin: auto;
+ 
+}
 
 .initial-image{
-height: 60%;
-width: 60%;
-border: 0.2px solid blue;
+  border: 0.2px solid blue;
+  width:100%;
 }
 
 .image-card{

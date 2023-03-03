@@ -1,23 +1,19 @@
 import React from 'react';
-import {Card,CardContent,CardMedia,Typography} from '@mui/material';
+import {Card,CardContent,CardMedia} from '@mui/material';
 
 const ArchivedVersion = ({version}) => {
   return (
-    <a href={`../Archive/${version.name}`} className="link"><div className="cards">
-
-  <Card sx={{maxWidth:200,margin:'10px'}}  >
-    <CardMedia component="img" height="300px" alt="p"  image={version.thumbnail}/>
-    <CardContent>
-        <Typography gutterBottom variant='h6' color='black' align="center" component='div'>
-        {version.title}        </Typography>
-        <Typography gutterBottom variant='body2' color='text.secondary' align="center" component='div'>
-      {version.date}
-</Typography>
-    </CardContent>
-
-</Card>
-
-  </div></a>
+    <a href={`../Archive/${version.name}`} className="link">
+      <div className="cards">
+        <Card sx={{width:250,margin:'10px'}}  >
+          <CardMedia component="img" height="300px" alt="p"  image={version.thumbnail}/>
+          <CardContent>
+            <h4>{version.title}</h4>
+            <p className='version-date'>{version.date}</p>
+          </CardContent>
+        </Card>
+      </div>
+    </a>
   )
 }
 

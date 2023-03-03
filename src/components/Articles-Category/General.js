@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react'
 import ArticleCard from '../Articles/ArticleCard';
-import eureka from '../../images/eureka.png';
+import eureka from '../../images/eureka.svg';
 import './categories.css';
 const General = () => {
   const [cards , setCards]=useState();

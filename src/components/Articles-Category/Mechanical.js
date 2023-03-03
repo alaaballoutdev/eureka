@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react'
 import ArticleCard from '../Articles/ArticleCard';
-import mechanical from '../../images/mechanical.png';
+import mechanical from '../../images/mechanical.svg';
 import './categories.css';
 const Mechanical = () => {
   const [cards , setCards]=useState();

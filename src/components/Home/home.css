@@ -15,8 +15,11 @@
 
 .content{
   display: flex;
-  
-  
+}
+
+.section-title{
+  margin-right: 15px;
+  margin-top: 45px;
 }
 .top-news{
   background-color: rgb(245,245,245);

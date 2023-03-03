@@ -1,5 +1,4 @@
 import React,{useState ,useEffect}from 'react'
-import {Typography} from "@mui/material";
 import Section from './Section'
 import NotFound from '../NotFound'
 import './article.css'
@@ -45,15 +44,12 @@ if(!article){
 
 
   return (
-
-
     <div className="article">
-
-      <center>
-        <Typography variant="h4" className="Title">{article.title}</Typography>
-        <h4 className="author">{article.author} </h4>
-        <img className="initial-image" alt='i' src={article.image} />
-      </center>
+        <h1 className="title">{article.title}</h1>
+        <h4 className="author">{article.author}</h4>
+        <div className='image-wrapper'>
+          <img className="initial-image" alt='thumbnail' src={article.image} />
+        </div>
         <div className="body">
               {article.body.map((s,index)=>
                 <Section key={index} paragraph={s.paragraph} subtitle={s.subtitle} imagesCards={s.imagesCards} />

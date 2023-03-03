@@ -1,5 +1,4 @@
 import {useState ,useEffect}from 'react'
-import Typography from "@mui/material/Typography";
 import NotFound from '../NotFound'
 import Section from '../Articles/Section'
 import {useParams} from 'react-router-dom';
@@ -47,8 +46,8 @@ return <NotFound />
     <div className="article">
 
       <center>
-      <Typography variant="h4" >{article.title}</Typography>
-      <Typography variant="body2" sx={{color:'rgb(100,100,100)'}}>{article.date}</Typography>
+      <h1>{article.title}</h1>
+      <p>{article.date}</p>
       <h4 className="author">{article.author} </h4>
       <img className="initial-image" alt='i' src={article.image} /></center>
     <div className="body">

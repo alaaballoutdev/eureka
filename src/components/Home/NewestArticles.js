@@ -1,12 +1,12 @@
 import {useEffect, useState} from 'react'
 import NewestArticleByCategory from './NewestArticleByCategory';
-import { Typography } from '@mui/material';
 import './home.css';
-import  civilIcon  from'../../images/civil.png';
-import mechanicalIcon from '../../images/mechanical.png';
-import generalIcon from '../../images/eureka.png';
-import petrolIcon from '../../images/petro.png'
-import {ElectricalServices,Cast} from '@mui/icons-material';
+import  civilIcon  from'../../images/civil.svg';
+import mechanicalIcon from '../../images/mechanical.svg';
+import generalIcon from '../../images/eureka.svg';
+import petrolIcon from '../../images/petro.svg';
+import telecomIcon from '../../images/telecom.svg'
+import {ElectricalServices} from '@mui/icons-material';
 const NewestArticles = () => {
   const [cards,setCards]=useState([]);
   useEffect(()=>{
@@ -46,15 +46,15 @@ const NewestArticles = () => {
 
   return (
     <div>
-    <Typography variant='h5' sx={{mt:3,mr:1}}>احدث المقالات</Typography>
+    <h2 className='section-title'>احدث المقالات</h2>
     <div className='flex-newest-articles'>
 
       <NewestArticleByCategory article={general} category='مواضيع عامة' icon={generalIcon} />
       <NewestArticleByCategory article={civil} category='مدني' icon={civilIcon}  />
       <NewestArticleByCategory article={mechanical} category='ميكانيك' icon={mechanicalIcon} />
       <NewestArticleByCategory article={petro } category='بتروكيمياء' icon={petrolIcon}  />
-      <NewestArticleByCategory article={electrecity} category='كهرباء' materialIcon={<Cast/>} />
-      <NewestArticleByCategory article={telecom} category='اتصالات' materialIcon={<ElectricalServices/>}/>
+      <NewestArticleByCategory article={electrecity} category='كهرباء'materialIcon={<ElectricalServices/>} />
+      <NewestArticleByCategory article={telecom} category='اتصالات'  icon={telecomIcon} />
 
 </div>
 </div>

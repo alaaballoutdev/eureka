@@ -15,9 +15,18 @@ margin-right: 70px;
 border-radius: 10px;
 
 }
-
+.magazine-file-title{
+    text-align: center;
+}
+.intro-title{
+  text-align: center;
+}
+.intro-date{
+  text-align: center;
+  color: gray;
+}
 .intro-body{
-font-family: arial;
+
 font-size: 18px;
 text-align: right;
 line-height: 1.5;

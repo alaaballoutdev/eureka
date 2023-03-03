@@ -1,9 +1,10 @@
-import {Tabs,Tab} from '@mui/material';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import {Tabs} from '@mui/material';
 
-const MagazineTabs = () => {
-  const [value,setValue] =useState(1);
+import { Link } from 'react-router-dom';
+import LinkTab from './LinkTab';
+
+const MagazineTabs = ({value,setValue}) => {
+  
   const handleChange = (event,newValue)=>{
     setValue(newValue);
   }
@@ -18,9 +19,9 @@ const MagazineTabs = () => {
       
         >
   
-          <Tab component={Link} label='افتتاحية العدد' to="/intro" value={1} sx={{fontSize:16}}/>
-          <Tab label="ملف العدد"  component={Link} to="/magazine-f" value={2} sx={{fontSize:16}} />
-          <Tab label="مقابلة العدد"  component={Link} to="/interview" value={3} sx={{fontSize:16}} />
+          <LinkTab component={Link} label='افتتاحية العدد' to="/intro" value={1} />
+          <LinkTab label="ملف العدد"  component={Link} to="/magazine-f" value={2}  />
+          <LinkTab label="مقابلة العدد"  component={Link} to="/interview" value={3}  />
   
         </Tabs>
   )
