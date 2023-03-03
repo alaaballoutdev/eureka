@@ -5,7 +5,17 @@ width:80%;
 margin-right: 10%;
 margin-bottom: 10%;
 }
-
+.initial-image{
+  width:100%;
+}
+.image-wrapper{
+  width: 60%;
+  margin: auto;
+}
+.article-file{
+  width: 90%;
+  margin: auto;
+}
 .m-image{
 width:35%;
 height: 35%;
@@ -65,7 +75,13 @@ margin-top: 0px;
   line-height: 1.5;
   width:100%;
   margin-right: 0px;
+  
 }
+.image-wrapper{
+  width: 95%;
+  margin: auto;
+}
+
 .intro-flex{
   display:block;
 

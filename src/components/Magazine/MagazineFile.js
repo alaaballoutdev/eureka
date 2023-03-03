@@ -27,7 +27,9 @@ if(!article){
         <div className="article-file"  >
           <h1 className='magazine-file-title'>{article.title}</h1>
           <h4 className="author">{article.author} </h4>
-          <img className="initial-image" alt='i' src={article.image} />
+          <div className='image-wrapper'>
+            <img className="initial-image" alt='i' src={article.image} />
+          </div>
         <div className="body">
           {article.body.map((s,index)=>
             <Section key={index} paragraph={s.paragraph} subtitle={s.subtitle} imagesCards={s.imagesCards} />

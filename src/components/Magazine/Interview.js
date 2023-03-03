@@ -1,6 +1,5 @@
 import {useState,useEffect} from 'react'
 import {VideoCameraFront,FormatQuote} from '@mui/icons-material';
-
 import Section from '../Articles/Section'
 import './magazine.css';
 const Interview = () => {
@@ -32,7 +31,9 @@ else
 <FormatQuote/>
 <p>{interview.dialog}</p>
 </div>
-<center><img src={interview.image} alt='i' className="initial-image"/></center>
+<div className='image-wrapper'>
+  <img src={interview.image} alt='i' className="initial-image"/>
+</div>
 <div className="body">
 
   {interview.body.map((s,index)=>
