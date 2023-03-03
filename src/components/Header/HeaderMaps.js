@@ -31,7 +31,8 @@ export const InitialMap = new Map(
         ["/About",6],
         ['/cerebro',3],
         ['/Archive/',5],
-        ['/Archive',5]
+        ['/Archive',5],
+        ['/',0],
     ]
 
 
