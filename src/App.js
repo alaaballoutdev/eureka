@@ -7,7 +7,6 @@ import './App.css'
 import PageLoading from 'components/PageLoading';
 import { HeaderProvider } from 'Context/HeaderContext';
 import ScrollToTop from 'components/ScrollToTop/ScrollToTop';
-import ScrollToTopButton from 'components/ScrollToTop/ScrollToTopButton';
 const NewsPaper = lazy(()=>import('./components/News/NewsPaper')); 
 const About = lazy(()=>import('./components/About/About'))
 const Article =lazy(()=> import('./components/Articles/Article'));
@@ -66,7 +65,7 @@ const App = () => {
 </div>
 
 <Footer/>
-<ScrollToTopButton/>
+
 
   </Router>
   </div>

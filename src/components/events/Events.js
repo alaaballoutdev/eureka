@@ -1,7 +1,7 @@
 import {useState,useEffect} from 'react'
-import EventCard  from './EventCard';
+import EventCard  from "./EventCard";
 import styles from './Event.module.css'
-import EventCardsLoading from './EventCardsLoading';
+import EventCardsLoading from "./EventCardsLoading";
 
 const Events = () => {
   const [cards,setCards]=useState();
