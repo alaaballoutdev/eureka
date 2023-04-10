@@ -21,8 +21,8 @@ const Mechanical = lazy(()=>import('./components/Articles-Category/Mechanical'))
 const Petro = lazy(()=>import('./components/Articles-Category/Petro'))
 const General =  lazy(()=>import('./components/Articles-Category/General'))
 const Electrecitiy =  lazy(()=>import('./components/Articles-Category/Electrecity'))
-const Events =lazy(()=>import('./components/Events/Events')) 
-const Event =lazy(()=>import( './components/Events/Event'))
+const Events =lazy(()=>import('./components/events/Events')) 
+const Event =lazy(()=>import( './components/events/Event'))
 const Introduction =lazy(()=>import('./components/Magazine/Introduction'));
 const Telecom =lazy(()=>import('./components/Articles-Category/Telecom'));
 const MagazineFile =lazy(()=>import('./components/Magazine/MagazineFile'));
