@@ -1,28 +1,31 @@
 import {useState,useEffect} from 'react'
-import { Carousel } from 'react-carousel-minimal';
-import ReactPlayer from 'react-player/facebook'
 import {useParams} from 'react-router-dom';
-import NotFound from '../NotFound'
-import './event.css'
+import NotFound from 'components/NotFound'
+import styles from './Event.module.css'
+import EventCarousel from './EventCarousel';
+import ArticleLoading from 'components/Articles/ArticleLoading';
+import FacbookVideo from 'components/Cerebro/FacbookVideo';
 const Event = () => {
   const [articles , setArticles]=useState();
-    useEffect(()=>{
+  const {id }=useParams();
+  useEffect(()=>{
     const getArticles = async ()=>{
-      await fetch("../json-data/events.json").then(res=>res.json()).then(data=>setArticles(data.events))
+      await fetch("../json-data/events.json")
+      .then(res=>res.json())
+      .then(data=>setArticles(data.events))
       .catch(err=>console.log(err));
-
     }
 
     getArticles();
-    },[]
-    );
+  },[]);
 
 
-    const {id }=useParams();
-    if(!articles){
-      return <div className="loading"><center><h1 style={{color:'rgb(100,100,100)'}}>...Loading</h1></center></div>
-    }
-    else{
+    
+if(!articles){
+  return <ArticleLoading/>
+
+}
+  
 const article= articles.find((art)=> art.id === parseInt(id));
 
 if(!article){
@@ -31,47 +34,18 @@ return <NotFound />
 
 
 return (
-  <div className='event'>
-      <center>
-      <h1>{article.title}</h1>
-      <p style={{marginTop:1,color:'rgb(100,100,100)'}}>{article.date}</p>
-      </center>
-
-      <Carousel
-            data={article.images}
-            time={4000}
-            width="850px"
-
-
-            radius="10px"
-            slideNumber={false}
-
-            captionPosition="bottom"
-            automatic={false}
-            dots={true}
-            pauseIconColor="white"
-            pauseIconSize="40px"
-            slideBackgroundColor="black"
-            slideImageFit="cover"
-            thumbnails={true}
-            thumbnailWidth="100px"
-            style={{
-              textAlign: "center",
-              maxWidth: "600px",
-
-              margin: "40px auto",
-              direction:'ltr'
-            }} />
-
-      <div className='event-body'>
+  <div className={styles.event}>
+    <h1 className={styles.eventTitle}>{article.title}</h1>
+    <p className={styles.eventDate}>{article.date}</p>
+    <EventCarousel images={article.images}/>
+    <div className={styles.eventBody}>
           {article.body.map((b,index)=><p style={{lineHeight:2}} key={index}>{b}</p>)}
-      </div>
-
-  <center>
-      <ReactPlayer url={article.videoUrl} controls wrapper='div' width="50%"height='50%' className='videos'/>
-  </center>
+    </div>
+    <div className={styles.eventVideo}>
+        <FacbookVideo link={article.videoUrl}  />
+    </div>
     </div>
   )
-}}
+}
 
 export default Event

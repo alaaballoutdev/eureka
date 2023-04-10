@@ -4,6 +4,7 @@ import NotFound from '../NotFound'
 import './article.css'
 
 import {useParams} from 'react-router-dom';
+import ArticleLoading from './ArticleLoading';
 
 const Article = () => {
     const {id }=useParams();
@@ -30,10 +31,10 @@ try{
 },[setArticles]);
 
 
-      if(!articles){
-        return <div className="loading"><center><h1 style={{color:'rgb(100,100,100)'}}>...Loading</h1></center></div>
-      }
-else{
+if(!articles){
+  return <ArticleLoading/>
+}
+
 const article= articles.find((art)=> art.id === parseInt(id));
 
 if(!article){
@@ -58,6 +59,6 @@ if(!article){
     </div>
 
 )}
-}
+
 
 export default Article;

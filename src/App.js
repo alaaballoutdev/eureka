@@ -1,42 +1,49 @@
+import { lazy, Suspense } from 'react'
 import Home from './components/Home/Home'
-import News from './components/News/News'
-import ArticlesCards from './components/Articles/ArticlesCards'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
-import Article from './components/Articles/Article'
-import About from './components/About/About';
-import Civil from './components/Articles-Category/Civil';
-import Mechanical from './components/Articles-Category/Mechanical';
-import Petro from './components/Articles-Category/Petro';
-import General from './components/Articles-Category/General';
-import Electrecitiy from './components/Articles-Category/Electrecity'
 import{ Routes,Route,BrowserRouter as Router} from 'react-router-dom';
-import Cerebro  from './components/Cerebro/Cerebro'
-import NewsPaper from  './components/News/NewsPaper'
-import Events from './components/events/Events';
-import Event from './components/events/Event';
-import Introduction from './components/Magazine/Introduction';
-import Telecom from './components/Articles-Category/Telecom';
-import MagazineFile from './components/Magazine/MagazineFile';
-import Interview from './components/Magazine/Interview';
-import Archive  from  './components/Archive/Archive.js';
-import ScrollToTop from './components/ScrollToTop';
-import NotFound from './components/NotFound'
 import './App.css'
+import PageLoading from 'components/PageLoading';
+import { HeaderProvider } from 'Context/HeaderContext';
+import ScrollToTop from 'components/ScrollToTop/ScrollToTop';
+import ScrollToTopButton from 'components/ScrollToTop/ScrollToTopButton';
+const NewsPaper = lazy(()=>import('./components/News/NewsPaper')); 
+const About = lazy(()=>import('./components/About/About'))
+const Article =lazy(()=> import('./components/Articles/Article'));
+const News =lazy(()=> import('./components/News/News'));
+const AllArticles =lazy(()=> import('./components/Articles-Category/AllArticles'));
+const NotFound= lazy(()=>import( './components/NotFound'));
+const Archive = lazy(()=>import('./components/Archive/Archive'));
+const Cerebro=lazy(()=>import( './components/Cerebro/Cerebro'));
+const Civil = lazy(()=>import('./components/Articles-Category/Civil'))
+const Mechanical = lazy(()=>import('./components/Articles-Category/Mechanical'))
+const Petro = lazy(()=>import('./components/Articles-Category/Petro'))
+const General =  lazy(()=>import('./components/Articles-Category/General'))
+const Electrecitiy =  lazy(()=>import('./components/Articles-Category/Electrecity'))
+const Events =lazy(()=>import('./components/Events/Events')) 
+const Event =lazy(()=>import( './components/Events/Event'))
+const Introduction =lazy(()=>import('./components/Magazine/Introduction'));
+const Telecom =lazy(()=>import('./components/Articles-Category/Telecom'));
+const MagazineFile =lazy(()=>import('./components/Magazine/MagazineFile'));
+const Interview =lazy(()=>import( './components/Magazine/Interview'));
 
 const App = () => {
   return (
-    <Router>
+    <div className='App'>
+  <Router>
+  <HeaderProvider>
+    <Header/>
+  </HeaderProvider>  
+    <ScrollToTop/>
 
-<div className="App" >
-<Header/>
-<ScrollToTop />
 <div className='app-body'>
+<Suspense fallback={<PageLoading/>} >
 <Routes>
   <Route exact path="/" element={<Home/>} />
   <Route exact path="/News" element={<News />} />
   <Route path={`News/:id`} element={<NewsPaper/>}/>
-  <Route exact path="/Articles" element={<ArticlesCards />} />
+  <Route exact path="/Articles" element={<AllArticles />} />
   <Route path={`/Articles/:id`} element={<Article/>}/>
   <Route exact path={`/Articles/Civil`} element={<Civil/>}/>
   <Route path={`/Articles/Mechanical`} element={<Mechanical/>}/>
@@ -54,12 +61,15 @@ const App = () => {
   <Route exact path={`/Archive`} element={<Archive/>}/>
   <Route path="*"element={<NotFound/>}/>
 </Routes>
+</Suspense>
 
 </div>
+
 <Footer/>
-</div>
+<ScrollToTopButton/>
 
   </Router>
+  </div>
   )
 }
 

@@ -1,9 +1,8 @@
 import {useEffect,useState} from 'react'
-
-import faculty from '../../images/faculty.png'
 import List from '@mui/material/List';
 import ListItemNews from './ListItemNews';
-
+import styles from './News.module.css'
+import NewsLoading from './NewsLoading';
 const News = () => {
   const [cards,setCards]=useState();
   useEffect(()=>{
@@ -16,29 +15,25 @@ const News = () => {
   getCard();
   },[]
   );
+const listStyle= {
+  width: '100%',
+  bgcolor: 'background.paper',
+}
+
 if(!cards){
-  return  <div className="loading"><center><h3 style={{color:'rgb(100,100,100)'}}>...Loading</h3></center></div>
+return <NewsLoading/>
 }
   return (
-    <div className="c"><div className="cover" style={{padding:10}}>
-    <img  width="100px" height="100px" src={faculty} alt='i' /></div>
-    <div style={{marginTop:15}}>
-
-<List
-
-sx={{
-        width: '100%',
-
-        bgcolor: 'background.paper',
-
-      }}
->
-{cards.map((c, index)=><ListItemNews key={index} title={c.title} date={c.date} newsArticle={`/News/${c.id}`} image={c.image} body={c.body} align={c.align} />)}
-
-</List>
-
-
-    </div></div>
+    <div className={styles.newsPage}>
+      <h1 className={styles.title}>أخبار الكلية</h1>     
+      
+        <List sx={listStyle}>
+          {cards.map(card=>
+            <ListItemNews key={card.id} article={card} newsArticle={`/News/${card.id}`}  />)
+          }
+        </List>
+      
+    </div>
   )
 }
 

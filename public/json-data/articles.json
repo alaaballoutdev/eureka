@@ -2,7 +2,8 @@
 	"articles": [
 		{
 			"id": 1,
-			"category": "civil",
+			"category": "مدني",
+			"date":"2022-11-1",
 			"title": "الطاقة الحرارية الأرضية= 5× الحاجة العالمية للطاقة!",
 			"author": "روزي ميلاني - طالبة دكتوراه في الهندسة الجيوتقنية - ليون، فرنسا",
 			"image": "../images/articles/article-1/i9.jpg",
@@ -136,7 +137,8 @@
 
 		{
 			"id": 2,
-			"category": "mechanical",
+			"category": "ميكانيك",
+			"date":"2022-11-3",
 			"title": "مشكلة كبيرة يسبّبها الهيدروجين: التقصّف",
 			"author": "إيليا طعمة - طالب دكتوراه",
 			"image": "../images/articles/article-2/thumbnail.jpg",
@@ -198,7 +200,8 @@
 		},
 		{
 			"id": 3,
-			"category": "general",
+			"category": "مواضيع عامة",
+			"date":"2022-11-4",
 			"title": "أبحاث الخلايا الجذعية: هل بإمكاننا العودة بالزمن إلى الوراء؟",
 			"author": "غادة قشور – دكتوراه في علم الأحياء",
 			"image": "../images/articles/article-3/thumbnail.jpg",
@@ -249,7 +252,8 @@
 		},
 		{
 			"id": 4,
-			"category": "petro",
+			"category": "بتروكيمياء",
+			"date":"2022-11-5",
 			"title": "من الغاز والنفط إلى الصناعات البتروكيماوية",
 			"author": "البروفيسور وائل سعيد حمد  -دكتوراه في الهندسة الكيميائية",
 			"image": "../images/articles/article-4/thumbnail.jpg",
@@ -317,7 +321,8 @@
 	},
 		{
 		"id":5,
-		"category":"electrecity",
+		"category":"كهرباء",
+		"date":"2022-11-3",
 		"title":"كيف يمكن كشف المواد المتفجرة عبر الهواء؟",
 		"author":"كريم قاسم- مهندس كهرباء",
 		"image":"../images/articles/article-5/i1.jpg",
@@ -462,7 +467,8 @@
 	},
 		{
 			"id":6,
-			"category":"telecom",
+			"category":"اتصالات",
+			"date":"2022-11-2",
 			"title":"نظام ذكي لتتبّع الجنود ومراقبة وضعهم الصحي",
 			"author":"علي بزي، مسلم غملوش، مصطفى إبراهيم، ماجد غريب، سميح عبد النبي، حسن خشفي",
 			"image":"../images/articles/article-6/i1.jpg",

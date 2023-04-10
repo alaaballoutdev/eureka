@@ -1,15 +1,12 @@
 import { Link } from 'react-router-dom'
-import './footer.css'
+import styles from './Footer.module.css'
 const Footer = () => {
   return (
-    <footer>
-  <div className='footer'>
-    <span>
-  <Link variant='overline' to='/About' className="f-about"
-style={{color:'white',textDecoration:'none',fontSize:18}}>عن المجلة</Link>
-</span>
-</div>
-    </footer>
+    
+      <div className={styles.footer}>
+        <Link to='/About' className={styles.aboutLink} >عن المجلة</Link>
+      </div>
+  
   )
 }
 

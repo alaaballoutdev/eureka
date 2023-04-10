@@ -1,26 +1,40 @@
-import React,{useEffect,useState} from 'react'
-import {Card,CardActions,CardContent,CardMedia,Button} from '@mui/material';
+import {useEffect,useState} from 'react'
+import {CardActions,CardContent,CardMedia,Button} from '@mui/material';
+import CardLoading from './CardLoading';
+import StyledCard from './StyledCard';
 
 const LatestVersion = () => {
 const [art,setArt]=useState();
+const [loading,setLoading] =useState(true);
+
+
 useEffect(()=>{
-fetch('./magazineJson/introduction.json').then((res)=>res.json()).then(data=>setArt(data)).catch(err=>console.log(err));
-
-
+  async function fetchInroduction(){
+    await fetch('./magazineJson/introduction.json')
+      .then((res)=>res.json())
+      .then(data=>setArt(data))
+      .catch(err=>console.log(err));
+      setLoading(false);
+  } 
+  fetchInroduction();
+  
 
 },[])
 
-if(!art){
 
-return <center><h2 style={{color:'rgb(100,100,100)'}}>...loading</h2></center>
+
+
+
+if(loading){
+
+return <CardLoading/>
 
 }
-else
-{
-  return (
+
+ return (
     <div className="latest-version">
-      <Card sx={{margin:'10px'}} >
-        <CardMedia component="img" height="400" alt="p"  image={art.image}/>
+      <StyledCard >
+        <CardMedia component="img" height={400} alt="Latest Version"  image={art.image}/>
         <CardContent>
             <h3>{art.title}</h3>
             <p>{art.date}</p>
@@ -32,9 +46,9 @@ else
             <a   href='/intro' className="link" style={{color:'white'}}  >اقرأ المزيد</a>
           </Button>
         </CardActions>
-      </Card>
+      </StyledCard>
   </div>
   )
-}}
+}
 
 export default LatestVersion

@@ -12,7 +12,6 @@ margin-left:100px;
 margin-right: 50px;
 }
 
-
 .author{
 color:rgb(100,100,100)
 }
@@ -25,16 +24,13 @@ color:rgb(100,100,100)
 }
 
 .article{
-margin: auto;
-width: 93%;
-
+  margin: auto;
+  width: 90%;
+  margin-top:100px;
 }
-
-
 
 .body{
   width: 100%;
-
 }
 
 .body  p{
@@ -45,7 +41,12 @@ color:black;
 .image-wrapper{
   width: 60%;
   margin: auto;
- 
+  margin-top:50px;
+  
+}
+.subtitle{
+  margin-right: 4%;
+  margin-top: 100px;
 }
 
 .initial-image{
@@ -58,30 +59,24 @@ margin: 10px;
 margin-top: 10px;
 margin-bottom: 10px;
 }
+
+
+
 @media (hover: hover) and (pointer: fine) {
   .image-card:hover{
     min-width:500px;
   }
 }
-
-.subtitle{
-  max-width: 70%;
-}
-
-
-
-
 @media only screen and (max-width:700px){
 
   .body{
     width:100%;
     margin-right: 4%;
   }
-
-  .initial-image{
+  .image-wrapper{
     width:90%;
-    margin-bottom: 20px;
-}
+    margin: auto;
+  }
 
   .image-card{
       width:90%;
@@ -95,9 +90,4 @@ margin-bottom: 10px;
     max-width:100%;
     margin: 2%;
   }
-  .subtitle{
-  max-width: 90%;
-  }
-
-
 }

@@ -1,20 +1,25 @@
-.civil{
-  margin-bottom: 150px;
+.category-page{
+  min-height: 100vh;
+  margin-bottom: 100px;
+  width: 100%;
+  position: relative;
+}
+.articles-wrapper{
+width: 100%;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+
+}
+.title{
+  margin-top: 100px;
 }
 
-.electrecity{
-  margin-bottom: 150px;
+.article-category-loading{
+  min-height: 100vh;
+  text-align: center;
 }
-.general{
-  margin-bottom: 150px;
-}
-.mechanical{
-margin-bottom: 150px;
-}
-
-.petro{
-  margin-bottom: 150px;
-}
-.telecom{
-  margin-bottom: 150px;
+.card-skeletons{
+  margin-top: 50px;
+  margin: 30px; 
 }

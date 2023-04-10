@@ -1,13 +1,44 @@
 .introduction{
-margin-top:20px;
-padding: 5px;
-width:80%;
-margin-right: 10%;
-margin-bottom: 10%;
+  width:80%;
+  margin: auto;
+  margin-bottom: 100px;
+}
+.crop{
+  width:400px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-top:30px;
+  
+  
+}
+.crop-loading{
+  width:400px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-top:30px;
+  height:500px;
+}
+.intro-image{
+  position: relative;
+  
+}
+.intro-body{
+  font-size: 18px;
+  text-align: right;
+  line-height: 1.5;
+  width:50%;
+}
+
+  
+.intro-flex{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .initial-image{
   width:100%;
 }
+
 .image-wrapper{
   width: 60%;
   margin: auto;
@@ -16,18 +47,6 @@ margin-bottom: 10%;
   width: 90%;
   margin: auto;
 }
-.m-image{
-width:35%;
-height: 35%;
-margin-bottom: 50px;
-margin-top: 20px;
-margin-right: 70px;
-border-radius: 10px;
-
-}
-.magazine-file-title{
-    text-align: center;
-}
 .intro-title{
   text-align: center;
 }
@@ -35,21 +54,8 @@ border-radius: 10px;
   text-align: center;
   color: gray;
 }
-.intro-body{
-
-font-size: 18px;
-text-align: right;
-line-height: 1.5;
-width:55%;
-margin-right: 20px;
-}
-p{
-font-stretch: extra-expanded;
-}
-
-.intro-flex{
-  display: inline-flex;
-  flex-direction: row-reverse;
+.magazine-file-title{
+    text-align: center;
 }
 
 .dialog{
@@ -65,31 +71,49 @@ margin-top: 0px;
 }
 .interview{
   margin: 20px;
+  margin-bottom: 100px;
+}
+.skeleton-spacing{
+  margin: 20px;
+  text-align: center;
+
+}
+.interview-date{
+  color:rgb(100,100,100);
+  text-align: center;
 }
 
-@media only screen and (max-width:600px){
+@media screen and (max-width:1167px) {
+  .crop{
+    width: 100%;
+    margin-bottom: 100px;
+  }
+  .intro-image{
+    width: 100%;
+    height: auto;
+  }
   .intro-body{
+    width: 100%;
+  }
+  .crop-loading{
+    width:100%;
+  }
   
-  font-size: 20px;
-  text-align: right;
-  line-height: 1.5;
-  width:100%;
-  margin-right: 0px;
-  
+
 }
+
+
+
+@media only screen and (max-width:600px){
+
+
 .image-wrapper{
   width: 95%;
   margin: auto;
 }
 
-.intro-flex{
-  display:block;
 
-}
-.m-image{
-  width: 90%;
-  margin-right: 5%;
-}
+
 .dialog{
   width:95%;
   margin-right: 2%;
@@ -97,5 +121,4 @@ margin-top: 0px;
 
 
 }
-.interview{
-  margin-bottom: 100px;}
+

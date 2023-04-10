@@ -5,36 +5,41 @@ import {  Archive, Article, Feed,
 import {Tabs} from '@mui/material';
 import LinkTab from './LinkTab';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { HeaderContext } from 'Context/HeaderContext';
 
-const InitialTabs = ({openTab,value,setValue}) => {
+
+const InitialTabs = () => {
  
-  const handleChange = (event, newValue)=>{
-    setValue(newValue);
-  }
-  
+ const {navigationValues,handleChange,openTab} = useContext(HeaderContext);
+  const {value}= navigationValues
+
+
 
     return (
   
         <Tabs value={value} 
-        
-        onChange={handleChange} indicatorColor="primary" variant="scrollable">
+          onChange={handleChange} 
+          indicatorColor="primary" 
+          variant="scrollable"
+        >
     
-        <LinkTab label="الرئيسية" to="/" icon={<Home/>} iconPosition='top' onClick={()=>openTab('')} />
+        <LinkTab label="الرئيسية" to="/" icon={<Home/>}   />
     
-        <LinkTab label="ابواب المجلة" to="/intro"  icon={<ImportContacts/>} iconPosition='top' onClick={()=>openTab('Magazine')}/>
+        <LinkTab label="ابواب المجلة" to="/intro"  icon={<ImportContacts/>}  onClick={()=>openTab('Magazine')}/>
     
         <LinkTab  label='المقالات' icon={<Article/>} to="/Articles" onClick={()=>openTab('Category')}/>
     
-        <LinkTab  component={Link} label='Cerebro' to="/cerebro" onClick={()=>openTab('')} icon={<OndemandVideo/>} iconPosition='top' sx={{fontSize:13}}/>
+        <LinkTab  component={Link} label='Cerebro' to="/cerebro"  icon={<OndemandVideo/>}  sx={{fontSize:13}}/>
     
     
-        <LinkTab label="أخبار" to="/News" icon={<Feed/>} iconPosition='top' onClick={()=>openTab('News')}/>
+        <LinkTab label="أخبار" to="/News" icon={<Feed/>}  onClick={()=>openTab('News')}/>
     
     
-        <LinkTab label="أرشيف" to="/Archive"  icon={<Archive/>} iconPosition='top' onClick={()=>openTab('')} />
+        <LinkTab label="أرشيف" to="/Archive"  icon={<Archive/>}   />
     
     
-        <LinkTab label="عن المجلة" to="/About"  icon={<Info/>} iconPosition='top' onClick={()=>openTab('')} />
+        <LinkTab label="عن المجلة" to="/About"  icon={<Info/>}  />
     
     
     

@@ -1,29 +1,31 @@
 import {useEffect,useState} from 'react'
-import Video from './Video';
-import './cerebro.css'
+import VideoCard from './VideoCard';
+import styles from './Cerebro.module.css'
+import CerebroLoading from './CerebroLoading';
 const Cerebro = () => {
-const [msg, setMsg]=useState('Please Wait');
+
   const [cards,setCards]=useState();
   useEffect(()=>{
-  const getCard =   ()=>{
-    fetch("./json-data/cerebro.json").then(res=>res.json()).then(data=>setCards(data.videos))
+  const getCard = async  ()=>{
+    
+    await fetch("./json-data/cerebro.json").then(res=>res.json()).then(data=>setCards(data.videos))
   .catch(err=>console.log(err));
-
+    
   }
 
   getCard();
   },[]
   );
 
-setTimeout(()=>setMsg(''),1000);
+
 if(!cards){
-  return <div className="loading" ></div>
+  return <CerebroLoading/>
 }
   return (
-    <div className='cerebro' style={{backgroundColor:'rgb(245,245,245)'}}>
-      <h3 style={{color:'rgb(100,100,100)',textAlign:'center'}}>{msg}</h3>
-      {cards.map((v,index)=>
-        <Video key={index} url={v.url} caption={v.caption}  />
+    <div className={styles.cerebro}>
+      <h1 className={styles.title}>أعمال فريق"CEREBRO"</h1>
+      {cards.map((videoCard,index)=>
+        <VideoCard key={index} videoCard={videoCard} />
       )}
     </div>
 

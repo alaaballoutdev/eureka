@@ -1,0 +1,26 @@
+.linkNews{
+    text-decoration: none;
+    color: black;
+}
+.newsCard:hover{
+    background-color: rgb(240,240,240);
+}
+.newsDate{
+    color: gray;
+}
+.newsImage{
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+@media only screen and (max-width:500px){
+    .newsImage{
+      width:90px;
+      height:70px
+    }
+    .newsCard{
+     font-size: smaller;
+    }
+    
+    
+}

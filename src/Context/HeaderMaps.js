@@ -12,12 +12,7 @@ export const CategoryMap= new Map(
     ]
   );
 
-export const NewsMap =  new Map(
-[
-    ['/News',1],
-    ['/Events',2]
-]
-)
+
 
 export const MagazineMap =  new Map(
 [

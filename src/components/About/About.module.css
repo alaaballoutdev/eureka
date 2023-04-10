@@ -1,0 +1,42 @@
+.aboutBody{
+  line-height:30px;
+  font-size: 22px;
+  width:70%;
+  margin: auto;
+  color:black;
+  
+}
+.facebookPageContainer{
+  width:300px;
+  margin: auto;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+.imageWrapper{
+  width:500px;
+  margin: auto;
+  margin-bottom: 70px;
+}
+.about{
+  margin-top: 80px;
+}
+
+.aboutImage{
+  border: 1px solid blue;
+}
+.follow{
+  text-align: center;
+}
+@media only screen and (max-width:700px){
+
+.imageWrapper{
+  width:90%;
+  margin: auto;
+  margin-bottom: 40px;
+}
+.aboutBody{
+  width:90%;
+  margin: auto;
+
+}
+}

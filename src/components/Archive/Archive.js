@@ -1,40 +1,41 @@
 import {useState,useEffect} from 'react';
 import ArchivedVersion from './ArchivedVersion';
 import './archive.css';
+import ArchiveLoading from './ArchiveLoading';
 const Archive = () => {
 const [archive ,setArchive]=useState();
 
   useEffect(()=>{
     const getArticles = async ()=>{
-      await fetch("../json-data/archive.json").then(res=>res.json()).then(data=>setArchive(data.archive.reverse()))
-      .catch(err=>console.log(err));
-
+      await fetch("../json-data/archive.json")
+        .then(res=>res.json())
+        .then(data=>setArchive(data.archive.reverse()))
+        .catch(err=>console.log(err));
     }
 
     getArticles();
-    },[]
-    );
+  },[]);
 
 
 if(!archive){
 
-return   <div className="loading"> <h3  style={{textAlign:'center',color:'rgb(100,100,100)'}}>...Loading</h3></div>
-
+return <ArchiveLoading />
 
 }
 
 
-else {
-
-  return (
-<center>
-{archive.map((arch, index)=><ArchivedVersion key={index} version={arch} />)}
 
 
+ return (
+  <>
+    <h1 className='title'>أرشيف المجلة</h1>
+    <div className='archive-container'>
+      {archive.map((version, index)=><ArchivedVersion key={index} version={version} />)}
+    </div>
 
+  </>
 
-</center>
   )
-}}
+}
 
 export default Archive
