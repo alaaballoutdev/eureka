@@ -1,6 +1,6 @@
 .skeletonWrapper{
   margin: auto;
-  width:80%;
+  width:60%;
 }
 .cerebro{
   margin-bottom: 100px;
@@ -9,4 +9,14 @@
 .title{
   margin-top: 100px;
   margin-bottom: 75px;
+}
+
+@media  screen and (max-width:500px) {
+  .skeletonWrapper{
+    margin: auto;
+    width:90%;
+  }
+  
+
+
 }

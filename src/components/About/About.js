@@ -23,7 +23,7 @@ return (
     <div className={styles.imageWrapper}>
       <img src='./images/about.jpeg' alt='i' width="100%" className={styles.aboutImage}/>
     </div>
-    {about.body.map((paragraph,index)=><p key={index}  className={styles.aboutBody}>{paragraph}</p>)}
+    {about.body.map((paragraph,index)=><p key={index} dangerouslySetInnerHTML={{__html:paragraph}} className={styles.aboutBody}></p>)}
     <div className={styles.facebookPageContainer}>
       <h4 className={styles.follow}>تابعنا عبر صفحاتنا على مواقع التواصل</h4>
 
