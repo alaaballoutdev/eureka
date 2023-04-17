@@ -3,18 +3,28 @@ import {VideoCameraFront,FormatQuote} from '@mui/icons-material';
 import Section from '../Articles/Section'
 import './magazine.css';
 import ArticleLoading from 'components/Articles/ArticleLoading';
+import NotFound from 'components/NotFound';
 const Interview = () => {
 const [interview, setInterview]=useState();
-
+const [loading,setLoading]=useState(true);
 useEffect (()=>{
-  fetch('./magazineJson/interview.json')
-  .then(res=>res.json())
-  .then(data=>setInterview(data));
-},[])
-if(!interview){
+  async function fetchInterview(){
+    setLoading(true);
+    await fetch('./magazineJson/interview.json')
+    .then(res=>res.json())
+    .then(data=>setInterview(data))
+    .catch(err=>console.log(err));
+    setLoading(false);
+  }
+  fetchInterview()
+},[]);
+
+if(loading){
   return <ArticleLoading/>
 }
-
+if(!loading&&!interview){
+  return <NotFound/>
+}
 
   return (
     <>

@@ -6,33 +6,28 @@ import EventCarousel from './EventCarousel';
 import ArticleLoading from 'components/Articles/ArticleLoading';
 import FacbookVideo from 'components/Cerebro/FacbookVideo';
 const Event = () => {
-  const [articles , setArticles]=useState();
+  const [article , setArticle]=useState();
+  const [loading,setLoading] = useState(true);
   const {id }=useParams();
   useEffect(()=>{
     const getArticles = async ()=>{
+      setLoading(true);
       await fetch("../json-data/events.json")
       .then(res=>res.json())
-      .then(data=>setArticles(data.events))
+      .then(data=>setArticle(data.events.find((art)=> art.id === parseInt(id))))
       .catch(err=>console.log(err));
+      setLoading(false);
     }
-
     getArticles();
-  },[]);
+  },[id]);
 
-
-    
-if(!articles){
+if(loading)
   return <ArticleLoading/>
 
-}
-  
-const article= articles.find((art)=> art.id === parseInt(id));
-
-if(!article){
-return <NotFound />
-}
-
-
+if(!loading && !article){
+  return <NotFound/>
+}  
+    
 return (
   <div className={styles.event}>
     <h1 className={styles.eventTitle}>{article.title}</h1>

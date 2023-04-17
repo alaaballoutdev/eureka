@@ -2,21 +2,32 @@ import {useState,useEffect} from 'react';
 import styles from './About.module.css'
 import ArticleLoading from 'components/Articles/ArticleLoading';
 import FacebookPage from './FacebookPage';
+import NotFound from 'components/NotFound';
 const About = () => {
-const [about,setAbout]=useState();
+const [about,setAbout] = useState();
+const [loading,setLoading] = useState(true);
 useEffect(()=>{
   async function fetchAbout(){
+    setLoading(true);
     await fetch('./json-data/about.json')
     .then(res=>res.json())
     .then(data=>setAbout(data))
     .catch(err=>console.log(err));
+    setLoading(false);
   }
+  
   fetchAbout();
+ 
 },[])
 
-if(!about){
+if(loading){
   return <ArticleLoading/>
 }
+
+if(!loading&&!about ){
+  return <NotFound/>
+}
+
 return (
   <div className={styles.about}>
     <h1>{about.title}</h1>

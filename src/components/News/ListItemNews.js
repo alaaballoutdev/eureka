@@ -5,9 +5,9 @@ import styles from './ListItemNews.module.css'
 const ListeItemNews = ({article,newsArticle}) => {
   
   const listItemStyle = {
-    mb:1,
     backgroundColor:'white',
     margin: 'auto',
+    mb:1,
     boxSizing:'border-box',
     width:'90%',
     boxShadow:'0px 0px 10px 1px rgba(0,0,0,0.2)'

@@ -42,7 +42,8 @@ body{
   height: 100px;
   background-color: rgb(245,245,245);
   text-align: center;
-  padding: 5px;
+  padding: 8px;
+
   color:black;
   display: flex;
   justify-content: center;

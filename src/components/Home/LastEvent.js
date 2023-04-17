@@ -6,23 +6,35 @@ import StyledCard from './StyledCard';
 
 const LastEvent = () => {
   const [event , setEvent]=useState();
+  const [loading,setLoading]= useState(true);
+  const isTabOrGreater =  useMediaQuery('(min-width:1000px)');
+
   useEffect(()=>{
     const getCard =async  ()=>{
-      await fetch("./json-data/events.json").then(res=>res.json()).then(data=>setEvent(data.events[data.events.length-1]))
+      setLoading(true);
+      await fetch("./json-data/events.json")
+      .then(res=>res.json())
+      .then(data=>
+        setEvent(data
+          .events
+          .reduce((a,b)=>
+            Date.parse(a.date)>Date.parse(b.date)?a:b,{}))  
+      )
       .catch(err=>console.log(err));
+      setLoading(false);
     }
     getCard();
-},[]
-);
-const isTabOrGreater =  useMediaQuery('(min-width:1000px)');
+  },[]);
 
-if(!event){
-
-return <CardLoading/>
-
+if(loading){
+  return <CardLoading/>
 }
-else{
-  return (
+if(!loading && !event){
+  return <></>
+}
+
+
+return (
     <div className="latest-version">
       <Link to={`/Events/${event.id}`} className="link">
         
@@ -38,6 +50,6 @@ else{
      
     </div>
   )
-}}
+}
 
 export default LastEvent

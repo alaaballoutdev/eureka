@@ -2,16 +2,19 @@ import {useState,useEffect} from 'react';
 import {TipsAndUpdates} from '@mui/icons-material';
 import IntroLoading from './IntroLoading';
 import './magazine.css'
+import NotFound from 'components/NotFound';
 
 const Introduction = () => {
 const [intro,setIntro]=useState();
-
+const [loading,setLoading]=useState(true);
 useEffect(()=>{
   const fetchIntro = async  () =>{
+    setLoading(true);
     await fetch('./magazineJson/introduction.json')
     .then((res)=>res.json())
     .then(data=>setIntro(data))
     .catch(err=>console.log(err));
+    setLoading(false);
   }
 
   fetchIntro();
@@ -19,12 +22,14 @@ useEffect(()=>{
 
 },[])
 
-if(!intro){
+if(loading){
 return <IntroLoading/>
 }
+if(!loading && !intro){
+  return <NotFound/>
+}
 
-
-  return (
+return (
     <div className="intro">
       <div className="cover"><TipsAndUpdates sx={{height:100,width:100}}/></div>
       <div className="introduction">

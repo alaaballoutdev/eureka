@@ -2,49 +2,38 @@ import React,{useState ,useEffect}from 'react'
 import Section from './Section'
 import NotFound from '../NotFound'
 import './article.css'
-
 import {useParams} from 'react-router-dom';
 import ArticleLoading from './ArticleLoading';
 
 const Article = () => {
-    const {id }=useParams();
-
-    const [articles , setArticles]=useState();
-
-    useEffect(()=>{
-
-          let isActive=true;
-
-async function fetchData (){
-try{
-  let res= await fetch("../json-data/articles.json")
-  let data=await res.json();
-  if(isActive){
-        setArticles(data.articles);}
-  }
-  catch(err){
-    console.log(err);
-  }
-  }
-  fetchData();
-        return ()=>{isActive=false;};
-},[setArticles]);
+  const {id }=useParams();
+  const [article , setArticle]=useState();
+  const [loading,setLoading] =  useState(true);
+  useEffect(()=>{
+    setLoading(true);
+    async function fetchData (){
+      await fetch("../json-data/articles.json")
+      .then(res=>res.json())
+      .then(data=> 
+        setArticle(data.articles
+          .find( art => art.id === parseInt(id))))
+      .catch(err=>console.log(err));
+      setLoading(false);
+    }
+    
+    fetchData();
+  
+},[id]);
 
 
-if(!articles){
+if(loading){
   return <ArticleLoading/>
 }
-
-const article= articles.find((art)=> art.id === parseInt(id));
-
-if(!article){
+if(!article&&!loading){
   return <NotFound />
 }
 
-
-
-
-  return (
+return (
     <div className="article">
         <h1 className="title">{article.title}</h1>
         <h4 className="author">{article.author}</h4>

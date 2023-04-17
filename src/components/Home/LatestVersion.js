@@ -26,9 +26,10 @@ useEffect(()=>{
 
 
 if(loading){
-
-return <CardLoading/>
-
+  return <CardLoading/>
+}
+if(!loading&&!art){
+  return <></>
 }
 
  return (

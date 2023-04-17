@@ -3,24 +3,28 @@ import Section from '../Articles/Section';
 import './magazine.css';
 import {AttachFile} from '@mui/icons-material';
 import ArticleLoading from 'components/Articles/ArticleLoading';
+import NotFound from 'components/NotFound';
 
-const MagazineFile = () => {
+const MagazineFile=()=>{
 const [article, setArticle]=useState();
+const [loading,setLoading]=useState(true);
 useEffect(()=>{
-const getArticles = async ()=>{
-  await fetch("./magazineJson/magazineFile.json")
+  const getArticles = async ()=>{
+    setLoading(true)
+    await fetch("./magazineJson/magazineFile.json")
     .then(res=>{console.log(res.status);return res.json()})
     .then(data=>setArticle(data))
     .catch(err=>console.log(err));
-}
+    setLoading(false);  
+  }
+  getArticles();
+},[]);
 
-getArticles();
-
-},[]
-);
-if(!article){
+if(loading){
 return <ArticleLoading/>
-
+}
+if(!loading && !article){
+  return <NotFound/>
 }
 
 

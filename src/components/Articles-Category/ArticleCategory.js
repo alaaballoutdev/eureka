@@ -2,56 +2,44 @@ import {useEffect,useState} from 'react'
 import ArticleCard from '../Articles/ArticleCard';
 import ArticlesCategoryLoading from './ArticlesCategoryLoading';
 import './categories.css';
+import NotFound from 'components/NotFound';
 
 
 const ArticleCategory = ({title,category}) => {
     const [cards , setCards]=useState();
-        useEffect(()=>{
-            const getCards =async  ()=>{
-                await fetch("../json-data/articles.json")
-                .then(res=>res.json())
-                .then(data=>setCards(data.articles))
-                .catch(err=>console.log(err));
-            }
-
-            getCards();
-        },[]);
-    
-if(!cards)
-        return <ArticlesCategoryLoading/>
-
-const getArticlesByCategory=()=>{
-    
-    return( 
-        <>
-        {cards.map((article)=>
-                        article.category===category?
-                        <ArticleCard art={article} key={article.id}/> :null
-                    )
+    const [loading,setLoading] = useState(true);
+    useEffect(()=>{
+        const getCards =async  ()=>{
+            setLoading(true);
+            await fetch("../json-data/articles.json")
+            .then(res=>res.json())
+            .then(data=>{
+                if(category === 'All'){
+                    setCards(data.articles);
+                    return;
+                }
+                setCards(data.articles.filter(article =>article.category===category))
+            })
+            .catch(err=>console.log(err));
+            setLoading(false);
         }
-        </>
-    )
-
-}
-const getAllArticles=()=>{
-    return( 
+        getCards();
+    },[category]);
     
-        <>
-        {cards.map((article)=><ArticleCard art={article} key={article.id}/>)} 
-        </>
-    )
-}
-
-
-return (
-    <div  className="category-page">
-        <h1 className='title'>{title}</h1>
-        <div className="articles-wrapper">
-            {
-                category==='All'?getAllArticles():getArticlesByCategory()
-            }
+    if(loading)
+        return <ArticlesCategoryLoading/>
+    if(!loading&&!cards)
+        return <NotFound/>
+    
+    return (
+        <div  className="category-page">
+            <h1 className='title'>{title}</h1>
+            <div className="articles-wrapper">
+                { cards.map(card=>
+                    <ArticleCard art={card} key={card.id}/>) 
+                }
+            </div>
         </div>
-    </div>
   )
 }
 

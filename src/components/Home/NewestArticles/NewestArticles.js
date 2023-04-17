@@ -8,9 +8,7 @@ import telecomIcon from 'images/telecom.svg'
 import {ElectricalServices} from '@mui/icons-material';
 const NewestArticles = () => {
   const [cards,setCards]=useState([]);
-  
   useEffect(()=>{
-    
     const fetchData= async ()=>{
       await fetch("./json-data/articles.json")
       .then(res=>res.json()).then(data=>{
@@ -19,19 +17,17 @@ const NewestArticles = () => {
         }
       )
       .catch(err=>console.log(err));
+      
     }
-   
-  
     fetchData();
-  
-    },[]
-  );
+  },[]
+);
 
 // I use this method because just i fecth data from json file which contains all articles
 // When I use database, I can fetch the latest article from each category .
 const getLatestArticle=(category)=>{
   return   cards.filter((article)=>article.category===category)
-    .reduce((a,b)=>Date.parse(a.date)>Date.parse(b.date)?a:b,{});
+    .reduce((a,b)=>Date.parse(a.date)>Date.parse(b.date)?a:b,{})
     
 }
 

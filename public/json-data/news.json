@@ -2,7 +2,7 @@
 	"news": [{
 		"id": 1,
 		"author": "",
-		"date": "٢٤ تشرين الأول ٢٠١٨",
+		"date": "2018-10-4",
 		"title": "الروبوت البحري",
 		"align": "right",
 		"image": "../images/news/new1/1.jpg",
@@ -13,9 +13,6 @@
 
 
 		}]
-
-
-
 	}
 
 

@@ -1,15 +1,8 @@
 import { useMediaQuery } from '@mui/material';
 import { Carousel } from 'react-carousel-minimal';
-import SliderLoading from './SliderLoading';
 
 const Slider = ({images}) => {
-
     const  isMobile = useMediaQuery('(max-width:1100px)');
-
-if(!images){
-    return <SliderLoading/>
-}    
-
 
 return (
     <Carousel
