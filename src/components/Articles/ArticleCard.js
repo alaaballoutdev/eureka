@@ -12,7 +12,7 @@ const ArticleCard = ({art}) => {
         </CardContent>
         <CardActions >
           <Button>  
-            <a href={`/Articles/${art.id}`} className="link">اقرأ المزيد</a>
+            <a href={`/Article/${art.id}`} className="link">اقرأ المزيد</a>
           </Button>
         </CardActions>
       </Card>

@@ -1,12 +1,12 @@
 export const CategoryMap= new Map(
     [
-      ["/Articles",1],
+      ["/Articles/All",1],
       ["/Articles/Civil",2],
       ["/Articles/Mechanical",3],
       ["/Articles/Electrecity",5],
-      ["/Articles/Petro",4],
+      ["/Articles/Petrochemical",4],
       ["/Articles/General",7],
-      ["/Articles/Telecom",6],
+      ["/Articles/Telecomunication",6],
       
   
     ]

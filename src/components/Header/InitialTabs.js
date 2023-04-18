@@ -28,7 +28,7 @@ const InitialTabs = () => {
     
         <LinkTab label="ابواب المجلة" to="/intro"  icon={<ImportContacts/>}  onClick={()=>openTab('Magazine')}/>
     
-        <LinkTab  label='المقالات' icon={<Article/>} to="/Articles" onClick={()=>openTab('Category')}/>
+        <LinkTab  label='المقالات' icon={<Article/>} to="/Articles/All" onClick={()=>openTab('Category')}/>
     
         <LinkTab  component={Link} label='Cerebro' to="/cerebro"  icon={<OndemandVideo/>}  sx={{fontSize:13}}/>
     

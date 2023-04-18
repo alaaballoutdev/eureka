@@ -1,7 +1,7 @@
 import Skeleton from 'react-loading-skeleton'
 import { Paper } from '@mui/material';
 
-const NewestArticlesLoading = () => {
+const NewestArticlesLoading = ({count}) => {
   
     const paperStyle={
       padding:2, 
@@ -12,10 +12,11 @@ const NewestArticlesLoading = () => {
       alignContent:'center',
       m:2
        
-      };  
-  
-return (
-    <div className='paper-wrapper'>
+      };
+    const loadingElements = [];
+    for(let i=0;i<count;i++){
+      loadingElements.push(
+        <div className='paper-wrapper' key={i} >
       <Paper  className="link-paper" sx={paperStyle}>
         <div className='title-wrapper'>
           <span style={{marginLeft:10}}>
@@ -32,7 +33,22 @@ return (
         </div>
       </Paper>
     </div>
-  )
+
+      );
+    }  
+      
+     
+  
+return (
+  <div>
+    <h2 className='section-title'>احدث المقالات</h2>
+    <div className='flex-newest-articles'>
+      {loadingElements}
+    </div>
+  </div>
+
+  
+      )
 }
 
 export default NewestArticlesLoading

@@ -5,11 +5,10 @@
   position: relative;
 }
 .articles-wrapper{
-width: 100%;
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .title{
   margin-top: 100px;
@@ -21,5 +20,8 @@ flex-wrap: wrap;
 }
 .card-skeletons{
   margin-top: 50px;
- 
+  margin-left: 20px;
+}
+.title-skeleton{
+  margin-top: 30px;
 }
