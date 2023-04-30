@@ -35,7 +35,7 @@ if(!article&&!loading){
 
 return (
     <>
-        <h1>{article.title}</h1>
+        <h1 className={styles.title}>{article.title}</h1>
         <p className={styles.author}>{article.author}</p>
         <div className={styles.imageWrapper}>
           <img className={styles.thumbnail} alt='thumbnail' src={article.image} />
