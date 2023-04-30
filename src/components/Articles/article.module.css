@@ -1,0 +1,67 @@
+.author{
+    color:rgb(50,50,50);
+    text-align: center;
+    font-weight: 600;
+}
+.imageWrapper{
+    width:60%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.thumbnail{
+    width: 100%;
+    border:1px solid blue;
+}
+.fillText{
+    width:90%;
+}
+
+.section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.sectionWrapper{
+    width:95%;
+    margin: auto;
+  
+}
+.imageCards{
+ width:300px
+    
+}
+.text{
+width:700px;
+}
+.imageCard{
+    margin-bottom: 20px;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+    .imageCards:hover{
+        min-width:500px;
+    }
+  
+}
+
+@media (max-width:700px) {
+    .imageWrapper{
+        width:90%;
+    }
+    .thumbnail{
+        width: 100%;
+        border:1px solid blue;
+    }
+    .imageCards{
+        width:90%;
+        margin: auto;
+           
+    }
+
+    
+}
+

@@ -1,12 +1,22 @@
 import {Card, CardMedia,CardContent,CardActions,Button}from '@mui/material';
-import './article.css';
 
 const ArticleCard = ({art}) => {
+  const CardStyle ={
+    maxWidth:300,
+    m:3
+  }
+  const CardContentStyle={
+    height:139,
+    overflow:'hidden'
+  }
+  
+  
   return (
-    <div className="cards">
-      <Card sx={{maxWidth:300,m:3}} >
+
+    
+      <Card sx={CardStyle} >
         <CardMedia component="img" height="150px" alt="p"  image={art.image}/>
-        <CardContent sx={{height:139,overflow:'hidden'}}>
+        <CardContent sx={CardContentStyle}>
           <h4>{art.title}</h4>
           <p>{art.body[0].paragraph[0]}</p>
         </CardContent>
@@ -16,7 +26,7 @@ const ArticleCard = ({art}) => {
           </Button>
         </CardActions>
       </Card>
-    </div>
+
   )
 }
 

@@ -1,19 +1,21 @@
 import ImageCard from './ImageCard'
-import './article.css';
+import styles from './article.module.css'
 
 const Section = ({subtitle, paragraph,imagesCards}) => {
   return (
-  <>
-    <h2  className="subtitle">{subtitle}</h2>
-    <div  className="Section-flex">
-      <div className="text-flex">
-        {paragraph.map((p,index)=>
-          <p style={{color:'rgb(20,20,20)'}} key={index} >{p}</p>)
+  <div className={styles.sectionWrapper}>
+    <h2  className={styles.subtitle}>{subtitle}</h2>
+    <div  className={styles.section}>
+      <div className={imagesCards.length!==0?styles.text:styles.fillText}>
+        {paragraph.map((sentence,index)=>
+          <p  key={index} >{sentence}</p>)
         }
       </div>
-      {imagesCards.map((c, index)=><ImageCard key={index} photo={c.photo} caption={c.caption}  />)}
+      <div className={styles.imageCards}>
+        {imagesCards.map((c, index)=><ImageCard key={index} photo={c.photo} caption={c.caption}  />)}
+      </div>
     </div>
-</>
+</div>
 
   )
 }

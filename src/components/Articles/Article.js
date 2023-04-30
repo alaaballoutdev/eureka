@@ -1,9 +1,9 @@
 import React,{useState ,useEffect}from 'react'
 import Section from './Section'
 import NotFound from '../NotFound'
-import './article.css'
 import {useParams} from 'react-router-dom';
 import ArticleLoading from './ArticleLoading';
+import styles from './article.module.css'
 
 const Article = () => {
   const {id }=useParams();
@@ -34,18 +34,17 @@ if(!article&&!loading){
 }
 
 return (
-    <div className="article">
-        <h1 className="title">{article.title}</h1>
-        <h4 className="author">{article.author}</h4>
-        <div className='image-wrapper'>
-          <img className="initial-image" alt='thumbnail' src={article.image} />
+    <>
+        <h1>{article.title}</h1>
+        <p className={styles.author}>{article.author}</p>
+        <div className={styles.imageWrapper}>
+          <img className={styles.thumbnail} alt='thumbnail' src={article.image} />
         </div>
-        <div className="body">
-              {article.body.map((s,index)=>
-                <Section key={index} paragraph={s.paragraph} subtitle={s.subtitle} imagesCards={s.imagesCards} />
+          {article.body.map((section,index)=>
+            <Section key={index} paragraph={section.paragraph} subtitle={section.subtitle} imagesCards={section.imagesCards} />
                 )}
-        </div>
-    </div>
+        
+    </>
 
 )}
 
